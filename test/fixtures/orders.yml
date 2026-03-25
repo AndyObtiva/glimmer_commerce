@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  shipping_address_id: 1
+  billing_address_id: 1
+  payment_info_id: 1
+  subtotal: 9.99
+  shipping: 9.99
+  sales_tax: 9.99
+  total: 9.99
+
+two:
+  shipping_address_id: 1
+  billing_address_id: 1
+  payment_info_id: 1
+  subtotal: 9.99
+  shipping: 9.99
+  sales_tax: 9.99
+  total: 9.99
