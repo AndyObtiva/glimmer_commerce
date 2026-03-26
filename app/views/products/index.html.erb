@@ -1,0 +1,3 @@
+<% content_for :title, "Products" %>
+
+<%= glimmer_component('views/components/product_index', products_json: @products.to_json) %>
