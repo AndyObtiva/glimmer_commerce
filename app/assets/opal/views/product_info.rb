@@ -15,12 +15,12 @@ class ProductInfo
 
   markup {
     div {
-      h1 { presenter.product.name }
-      p {
-        presenter.product.brand
-      }
-      p {
-        "$#{presenter.product.price}"
+      div {
+        h3 { presenter.product.brand }
+        h1 { presenter.product.name }
+        strong { "Size: #{presenter.size}" }
+        product_size_selector(presenter:)
+        h2 { "$#{presenter.product.price}" }
       }
       p {
         a(href: '/products') { 'Back' }
