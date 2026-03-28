@@ -1,15 +1,14 @@
 require 'models/product'
 
-ProductPresenter = Struct.new(:products_json, :products, keyword_init: true) do
+ProductPresenter = Struct.new(:product_attributes, :product, keyword_init: true) do
   def initialize(**args)
     super(**args)
-    initialize_products(args[:products_json])
+    initialize_product(args[:product_attributes])
   end
   
   private
   
-  def initialize_products(products_json)
-    products_array_of_hashes = JSON.parse(products_json)
-    self.products = products_array_of_hashes.map {|product_hash| Product.new(**product_hash) }
+  def initialize_product(product_attributes)
+    self.product = Product.new(**product_attributes)
   end
 end

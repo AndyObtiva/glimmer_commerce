@@ -1,17 +1,17 @@
 require 'glimmer-dsl-web'
 
 require 'models/product'
-require 'presenters/product_presenter'
+require 'presenters/product_collection_presenter'
 require 'views/product_list_item'
 
 class ProductList
   include Glimmer::Web::Component
 
-  attribute :products_json
+  attribute :products_attributes
   attr_reader :presenter
 
   before_render do
-    @presenter = ProductPresenter.new(products_json:)
+    @presenter = ProductCollectionPresenter.new(products_attributes:)
   end
 
   markup {
