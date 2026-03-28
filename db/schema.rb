@@ -12,8 +12,11 @@
 
 ActiveRecord::Schema[7.2].define(version: 2026_03_25_235734) do
   create_table "products", force: :cascade do |t|
-    t.integer "brand_id"
     t.string "name"
+    t.string "brand"
+    t.string "gender"
+    t.string "age"
+    t.string "size"
     t.text "description"
     t.decimal "price"
     t.datetime "created_at", null: false
