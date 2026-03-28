@@ -10,7 +10,7 @@ class ProductListItem
 
   markup {
     li {
-      a(href: product.resource_url) {
+      a(href: product.resource_path) {
         product.name
       }
       span { " | $#{product.price}" }

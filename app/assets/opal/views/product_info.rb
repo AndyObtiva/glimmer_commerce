@@ -10,7 +10,7 @@ class ProductInfo
   attr_reader :presenter
 
   before_render do
-    @presenter = ProductPresenter.new(product_attributes:)
+    @presenter = ProductPresenter.new(product_attributes)
   end
 
   markup {

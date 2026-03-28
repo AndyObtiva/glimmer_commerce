@@ -1,8 +1,8 @@
 class ProductSerializer < ActiveModel::Serializer
-  attributes :resource_url,
+  attributes :resource_path,
              *Product.attribute_names
   
-  def resource_url
+  def resource_path
     Rails.application.routes.url_helpers.product_path(object)
   end
   

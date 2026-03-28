@@ -11,7 +11,7 @@ class ProductList
   attr_reader :presenter
 
   before_render do
-    @presenter = ProductCollectionPresenter.new(products_attributes:)
+    @presenter = ProductCollectionPresenter.new(products_attributes)
   end
 
   markup {

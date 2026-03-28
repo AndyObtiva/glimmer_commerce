@@ -61,3 +61,4 @@ Things you may want to cover:
 - Final DB seeds
 
 - Setup ActiveStorage and update clothing product images
+- Do all page transitions locally with history.pushState or by definining a route container around every component's content (e.g. /products for product_list)
