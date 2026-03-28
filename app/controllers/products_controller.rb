@@ -3,12 +3,13 @@ class ProductsController < ApplicationController
 
   # GET /products or /products.json
   def index
+    # TODO use a ProductSerializer that includes a resource_url and image URLs
     @products = Product.all
-    pd @products
   end
 
   # GET /products/1 or /products/1.json
   def show
+    # TODO use a ProductSerializer that includes a resource_url and image URLs
   end
 
   # GET /products/new

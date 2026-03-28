@@ -2,17 +2,16 @@ require 'glimmer-dsl-web'
 
 require 'models/product'
 require 'presenters/product_presenter'
+require 'views/product_list_item'
 
-class ProductIndex
+class ProductList
   include Glimmer::Web::Component
 
   attribute :products_json
   attr_reader :presenter
 
   before_render do
-    @presenter = ProductPresenter.new(products_json: products_json)
-    puts presenter.products
-    puts presenter.products.first.name
+    @presenter = ProductPresenter.new(products_json:)
   end
 
   markup {
@@ -21,9 +20,7 @@ class ProductIndex
       ul {
         content(presenter, :products) do
           presenter.products.each do |product|
-            li {
-              "#{product.name} | $#{product.price}"
-            }
+            product_list_item(product:, presenter:)
           end
         end
       }
