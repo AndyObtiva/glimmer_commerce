@@ -10,7 +10,50 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2026_03_25_235734) do
+ActiveRecord::Schema[7.2].define(version: 2026_03_29_045143) do
+  create_table "addresses", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "street"
+    t.string "city"
+    t.string "state_or_province"
+    t.string "zip_or_postal_code"
+    t.string "country"
+    t.string "phone"
+    t.string "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "order_lines", force: :cascade do |t|
+    t.integer "order_id"
+    t.integer "product_id"
+    t.string "size"
+    t.integer "quantity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.integer "shipping_address_id"
+    t.integer "billing_address_id"
+    t.integer "payment_info_id"
+    t.decimal "subtotal"
+    t.decimal "shipping"
+    t.decimal "sales_tax"
+    t.decimal "total"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "payment_infos", force: :cascade do |t|
+    t.string "card_number"
+    t.string "expiry_date"
+    t.string "security_code"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "products", force: :cascade do |t|
     t.string "name"
     t.string "brand"
