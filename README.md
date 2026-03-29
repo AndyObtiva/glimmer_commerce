@@ -44,9 +44,10 @@ Things you may want to cover:
 - Show all items (with infinite scroll)
 
 - See product (including gender and age)
-- Select product size
-- Modify quantity for adding to shopping cart
++ Select product size
++ Modify quantity for adding to shopping cart
 - Add to cart (with an animation [svg?] that shows the product getting added to the shopping cart icon, updating the cart item count badge)
+- Show Shopping Cart icon in the top-right
 
 - View My Cart (with items, subtotal, shipping, taxes, and total)
 - Tweak quantities
