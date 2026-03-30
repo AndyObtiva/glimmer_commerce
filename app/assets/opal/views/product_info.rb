@@ -3,7 +3,9 @@ require 'glimmer-dsl-web'
 require 'models/product'
 require 'presenters/product_presenter'
 require 'views/product_size_selector'
+require 'views/product_added_modal'
 
+# TODO create a ProductOrderInfo or make this component take an option to hide add to cart part
 class ProductInfo
   include Glimmer::Web::Component
 
@@ -32,6 +34,7 @@ class ProductInfo
             # TODO submit web request to add to cart
             # TODO do an animation that shows a product image shrinking and moving into the Shopping Cart icon in the top-right before updating the cart quantity badge
             # TODO Illuminate or bring attention to the shopping cart icon in the top-right
+            ProductAddedModal.render
           end
         }
       }

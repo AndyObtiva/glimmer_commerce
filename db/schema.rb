@@ -42,6 +42,7 @@ ActiveRecord::Schema[7.2].define(version: 2026_03_29_045143) do
     t.decimal "shipping"
     t.decimal "sales_tax"
     t.decimal "total"
+    t.boolean "placed"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

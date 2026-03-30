@@ -8,6 +8,7 @@ class CreateOrders < ActiveRecord::Migration[7.2]
       t.decimal :shipping
       t.decimal :sales_tax
       t.decimal :total
+      t.boolean :placed
 
       t.timestamps
     end
