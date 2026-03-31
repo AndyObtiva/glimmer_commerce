@@ -27,7 +27,7 @@ class ProductAddedModal
             onclick do
               # TODO use history API (or replace button with a link)
               markup_root.remove
-              $$.document.location.href = '/orders/my'
+              $$.document.location.href = '/orders/shopping_cart'
             end
           }
         }

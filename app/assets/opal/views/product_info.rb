@@ -9,38 +9,45 @@ require 'views/product_added_modal'
 class ProductInfo
   include Glimmer::Web::Component
 
-  attribute :product_attributes
+  attributes :product_attributes, :product, :product_info_only
   attr_reader :presenter
 
   before_render do
-    @presenter = ProductPresenter.new(product_attributes)
+    puts product
+    @presenter = ProductPresenter.new(product_attributes:, product:)
   end
 
   markup {
     div {
       div {
+        puts presenter.product
+        puts presenter.product.class
         h3 { presenter.product.brand }
         h1 { "#{presenter.product.name} - #{presenter.product.age} / #{presenter.product.gender}" }
-        product_size_selector(presenter:)
+        product_size_selector(presenter:, product_info_only:)
         div {
-          span(style: {margin_right: 5}) { 'Quantity:' }
+          span(style: {margin_right: 5}) { 'Quantity:' } # TODO show confirm button when changing it inside an order
           input(type: 'number', min: 1, max: 10) {
             value <=> [presenter, :quantity]
           }
         }
         h2 { "$#{presenter.product.price}" }
-        button('Add to cart') {
-          onclick do
-            # TODO submit web request to add to cart
-            # TODO do an animation that shows a product image shrinking and moving into the Shopping Cart icon in the top-right before updating the cart quantity badge
-            # TODO Illuminate or bring attention to the shopping cart icon in the top-right
-            ProductAddedModal.render
-          end
+        unless product_info_only
+          button('Add to cart') {
+            onclick do
+              @presenter.add_to_cart do
+                ProductAddedModal.render
+              end
+              # TODO Illuminate or bring attention to the shopping cart icon in the top-right
+            end
+          }
+        end
+      }
+      unless product_info_only
+        p {
+          a(href: '/products') { 'Back' }
         }
-      }
-      p {
-        a(href: '/products') { 'Back' }
-      }
+      end
     }
   }
 end

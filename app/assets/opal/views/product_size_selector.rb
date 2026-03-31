@@ -6,7 +6,7 @@ require 'presenters/product_presenter'
 class ProductSizeSelector
   include Glimmer::Web::Component
 
-  attribute :presenter
+  attributes :presenter, :product_info_only
 
   markup {
     div {
@@ -15,19 +15,21 @@ class ProductSizeSelector
           inner_html <= [presenter, :size, on_read: -> { "Size: #{presenter.size}" }]
         }
       }
-      ul(id: 'product-sizes') {
-        Product::SIZES.each do |size|
-          li(class: 'product-size') {
-            button(size) {
-              class_name('product-size-selected') <= [presenter, :size, on_read: ->(val) {val == size}]
-              
-              onclick do
-                presenter.size = size
-              end
+      unless product_info_only
+        ul(id: 'product-sizes') {
+          Product::SIZES.each do |size|
+            li(class: 'product-size') {
+              button(size) {
+                class_name('product-size-selected') <= [presenter, :size, on_read: ->(val) {val == size}]
+                
+                onclick do
+                  presenter.size = size
+                end
+              }
             }
-          }
-        end
-      }
+          end
+        }
+      end
     }
   }
   
