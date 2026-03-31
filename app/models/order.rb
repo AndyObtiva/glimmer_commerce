@@ -3,4 +3,30 @@ class Order < ApplicationRecord
   belongs_to :shipping_address, optional: true
   belongs_to :billing_address, optional: true
   belongs_to :payment_info, optional: true
+  
+  def update_calculations!
+    calculate_subtotal
+    calculate_shipping
+    calculate_sales_tax
+    calculate_total
+    save!
+  end
+  
+  private
+  
+  def calculate_subtotal
+    self.subtotal = order_lines.sum(&:subtotal)
+  end
+  
+  def calculate_shipping
+    self.shipping = subtotal * 0.05
+  end
+  
+  def calculate_sales_tax
+    self.sales_tax = (subtotal + shipping) * 0.10
+  end
+  
+  def calculate_total
+    self.total = subtotal + shipping + sales_tax
+  end
 end

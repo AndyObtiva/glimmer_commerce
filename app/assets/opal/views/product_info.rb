@@ -13,15 +13,12 @@ class ProductInfo
   attr_reader :presenter
 
   before_render do
-    puts product
     @presenter = ProductPresenter.new(product_attributes:, product:)
   end
 
   markup {
     div {
       div {
-        puts presenter.product
-        puts presenter.product.class
         h3 { presenter.product.brand }
         h1 { "#{presenter.product.name} - #{presenter.product.age} / #{presenter.product.gender}" }
         product_size_selector(presenter:, product_info_only:)
@@ -41,6 +38,8 @@ class ProductInfo
               # TODO Illuminate or bring attention to the shopping cart icon in the top-right
             end
           }
+          # TODO add Remove Button for Shopping Cart
+          # Maybe use Glimmer Web Component Slots for that
         end
       }
       unless product_info_only
