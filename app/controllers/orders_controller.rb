@@ -1,7 +1,24 @@
 class OrdersController < ApplicationController
-  before_action :set_order, only: %i[ show ]
+  before_action :set_order, only: %i[ show edit ]
 
   def show
+  end
+  
+  def edit
+  end
+  
+  def update
+    # TODO update an order with shipping address, billing address, payment info, and finally placed=true to submit it (refreshing the shopping cart order if needed)
+    # rely on accepts_nested_attributes_for inside Order
+    respond_to do |format|
+      if @order.update(order_params) # TODO implement order_params with nested attributes
+        format.html { redirect_to @order, notice: "Order was successfully updated.", status: :see_other }
+        format.json { render :show, status: :ok, location: @order }
+      else
+        format.html { render :edit, status: :unprocessable_entity }
+        format.json { render json: @order.errors, status: :unprocessable_entity }
+      end
+    end
   end
   
   private

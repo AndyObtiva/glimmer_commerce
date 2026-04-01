@@ -3,6 +3,7 @@ require 'glimmer-dsl-web'
 require 'models/product'
 require 'models/order_line'
 require 'models/order'
+require 'views/order_summary'
 require 'views/product_info'
 
 class ShoppingCart
@@ -17,32 +18,14 @@ class ShoppingCart
 
   markup {
     div {
-      h1 { 'Cart' }
-      div(class: 'order-summary') {
-        table {
-          tr {
-            td { 'Subtotal' }
-            td { @order.subtotal }
-          }
-          tr {
-            td { 'Shipping' }
-            td { @order.shipping }
-          }
-          tr {
-            td { 'Sales Tax' }
-            td { @order.sales_tax }
-          }
-          tr {
-            td { 'Total' }
-            td { @order.total }
-          }
+      order_summary(order:)
+      div(class: 'cart') {
+        h1 { 'Cart' }
+        div(class: 'cart-products') {
+          order.order_lines.each do |order_line|
+            product_info(product: order_line.product, product_info_only: true)
+          end
         }
-        button('Checkout', class: 'cart-checkout-button')
-      }
-      div(class: 'cart-products') {
-        @order.order_lines.each do |order_line|
-          product_info(product: order_line.product, product_info_only: true)
-        end
       }
     }
   }
@@ -50,6 +33,9 @@ class ShoppingCart
   style {
     r('.shopping-cart') {
       width 1000
+    }
+    r('.shopping-cart .cart h1') {
+      padding_top 21
     }
     r('.shopping-cart .order-summary') {
       float 'right'
