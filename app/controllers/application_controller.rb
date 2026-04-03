@@ -3,12 +3,10 @@ class ApplicationController < ActionController::Base
   allow_browser versions: :modern
   
   def ensure_order_created!
-    pd session[:order_id]
     if session[:order_id].blank?
       create_order!
     else
       order = Order.find(session[:order_id])
-      pd order
       create_order! if order.placed? # placed order must be replaced by a fresh order
     end
   end

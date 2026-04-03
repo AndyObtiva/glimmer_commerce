@@ -38,9 +38,8 @@ class EditableSection
         class_name(:hidden) <= [section, :editing, on_read: :!]
         
         onclick do
-          submit_success = model.submit
-          if submit_success
-            presenter.edit_next_section
+          model.submit do |success|
+            presenter.edit_next_section if success
           end
         end
       }

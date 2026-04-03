@@ -2,6 +2,7 @@ require 'glimmer-dsl-web'
 
 require 'models/order'
 require 'views/address_form'
+require 'views/address_display'
 require 'views/editable_section'
 
 class OrderAddress
@@ -27,10 +28,8 @@ class OrderAddress
         address_form(address:)
       }
       saved_form_info {
-        if address.to_h.values.uniq == [nil]
-          label("EMPTY #{title}")
-        else
-          label("SAVED #{title}")
+        if !address.blank?
+          address_display(address:)
         end
       }
       on_submit {

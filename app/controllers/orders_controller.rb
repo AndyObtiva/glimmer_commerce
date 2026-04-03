@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  before_action :set_order, only: %i[ show edit ]
+  before_action :set_order, only: %i[ show edit update ]
 
   def show
   end
@@ -30,5 +30,12 @@ class OrdersController < ApplicationController
     else
       @order = Order.find(params[:id])
     end
+  end
+  
+  def order_params
+    params.require(:order).permit(
+      shipping_address_attributes: [:id, :first_name, :last_name, :street, :city, :state_or_province, :zip_or_postal_code, :country, :phone, :email],
+      billing_address_attributes: [:id, :first_name, :last_name, :street, :city, :state_or_province, :zip_or_postal_code, :country, :phone, :email],
+    )
   end
 end

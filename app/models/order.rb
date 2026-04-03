@@ -1,8 +1,11 @@
 class Order < ApplicationRecord
   has_many :order_lines
-  belongs_to :shipping_address, optional: true
-  belongs_to :billing_address, optional: true
+  belongs_to :shipping_address, class_name: 'Address', optional: true
+  belongs_to :billing_address, class_name: 'Address', optional: true
   belongs_to :payment_info, optional: true
+  
+  accepts_nested_attributes_for :shipping_address
+  accepts_nested_attributes_for :billing_address
   
   def update_calculations!
     calculate_subtotal
