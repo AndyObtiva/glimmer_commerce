@@ -5,7 +5,7 @@ require 'models/order'
 class OrderSummary
   include Glimmer::Web::Component
 
-  attribute :order
+  attributes :order, :checkout
 
   markup {
     div(class: 'order-summary') {
@@ -28,18 +28,23 @@ class OrderSummary
           td { order.total }
         }
       }
-      button('Checkout', class: 'cart-checkout-button') {
-        onclick do
-          $$.document.location.href = "/orders/#{order.id}/edit"
-        end
-      }
+      if checkout
+        button('Checkout', class: 'cart-checkout-button') {
+          onclick do
+            $$.document.location.href = "/orders/#{order.id}/edit"
+          end
+        }
+      end
     }
   }
   
   style {
     r('.order-summary') {
       float 'right' # TODO consider moving float to consumer
-      width 600
+      width 400
+      padding 15
+      border '2px solid black' # TODO update with something nicer
+      border_radius 15
     }
     r('.order-summary table') {
       width 100.%

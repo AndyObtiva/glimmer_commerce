@@ -1,28 +1,37 @@
 require 'glimmer-dsl-web'
 
 require 'models/order'
+require 'views/address_form'
 require 'views/editable_section'
 
 class OrderAddress
   include Glimmer::Web::Component
 
-  attributes :order, :address_attribute, :editable_section_presenter
+  attributes :order, :address_name
+  attr_reader :address_attribute, :title, :address
   events :on_submit
+  
+  before_render do
+    @address_attribute = "#{address_name.downcase}_address"
+    @address = order.send(address_attribute)
+    @title = "#{address_name.capitalize} Address"
+  end
   
   markup {
     editable_section(
-      title: 'Shipping Address',
+      title: title,
       submit_button_text: 'Continue',
-      model: order.send(address_attribute),
-      presenter: editable_section_presenter,
+      model: address,
     ) {
       edit_form {
-        # TODO build form fields
-        input(value: 'EDIT ME')
+        address_form(address:)
       }
       saved_form_info {
-        # TODO build form fields
-        label('SAVED')
+        if address.to_h.values.uniq == [nil]
+          label("EMPTY #{title}")
+        else
+          label("SAVED #{title}")
+        end
       }
       on_submit {
         # TODO do work

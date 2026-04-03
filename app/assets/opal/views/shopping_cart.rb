@@ -18,7 +18,7 @@ class ShoppingCart
 
   markup {
     div {
-      order_summary(order:)
+      order_summary(order:, checkout: true)
       div(class: 'cart') {
         h1 { 'Cart' }
         div(class: 'cart-products') {
