@@ -10,7 +10,7 @@ class OrderAddress
 
   attributes :order, :address_name
   attr_reader :address_attribute, :title, :address
-  events :on_submit
+  events :on_submit # TODO this might not be needed
   
   before_render do
     @address_attribute = "#{address_name.downcase}_address"
@@ -22,15 +22,13 @@ class OrderAddress
     editable_section(
       title: title,
       submit_button_text: 'Continue',
-      model: address,
+      model: address, # TODO this might not be needed
     ) {
       edit_form {
         address_form(address:)
       }
       saved_form_info {
-        if !address.blank?
-          address_display(address:)
-        end
+        address_display(address:)
       }
       on_submit {
         # TODO do work

@@ -20,6 +20,7 @@ Address = Struct.new(
   end
   
   def submit(&submit_result_processor)
+    # TODO do not submit anything if no changes happened
     address_attributes_param_name = "#{address_name}_address_attributes"
     params = { "order" => { address_attributes_param_name => address_attributes.merge(id:) } }
     update_resource_url = "/orders/#{order.id}"

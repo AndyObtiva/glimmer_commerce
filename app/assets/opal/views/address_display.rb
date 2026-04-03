@@ -9,6 +9,8 @@ class AddressDisplay
   
   markup {
     div {
+      class_name(:hidden) <= [address, :blank?, computed_by: address.address_attributes.keys]
+      
       address.address_attributes.each do |attribute, value|
         attribute_name = attribute.to_s.split('_').map(&:capitalize).join(' ')
         div(class: 'address-attribute') {
@@ -22,6 +24,9 @@ class AddressDisplay
   }
   
   style {
+    r('.address-display.hidden') {
+      display :none
+    }
     r('.address-display .address-attribute') {
       margin_bottom 10
     }

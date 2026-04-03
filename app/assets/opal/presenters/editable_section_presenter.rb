@@ -36,6 +36,8 @@ class EditableSectionPresenter
   def edit_next_section
     section_being_edited = sections.find(&:editing)
     section_being_edited_index = sections.index(section_being_edited)
+    puts "section_being_edited_index < (sections.size - 1)"
+    puts(section_being_edited_index < (sections.size - 1))
     if section_being_edited_index < (sections.size - 1)
       next_section_index = section_being_edited_index + 1
       sections[next_section_index].edit
