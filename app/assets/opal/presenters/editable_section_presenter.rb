@@ -32,7 +32,6 @@ class EditableSectionPresenter
     observer.observe(section, :editing)
   end
   
-  # TODO support edit_next_empty_section
   def edit_next_section
     section_being_edited = sections.find(&:editing)
     section_being_edited_index = sections.index(section_being_edited)
@@ -41,8 +40,10 @@ class EditableSectionPresenter
     if section_being_edited_index < (sections.size - 1)
       next_section_index = section_being_edited_index + 1
       sections[next_section_index].edit
+      :next
     else
       section_being_edited.stop_editing
+      :finished
     end
   end
 end

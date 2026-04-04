@@ -5,7 +5,8 @@ require 'presenters/editable_section_presenter'
 class EditableSection
   include Glimmer::Web::Component
 
-  events :on_submit
+  # TODO should we support an event on_finish
+  events :submit, :finish
   attributes :title, :submit_button_text, :model
   attr_reader :presenter, :section
   
@@ -38,8 +39,15 @@ class EditableSection
         class_name(:hidden) <= [section, :editing, on_read: :!]
         
         onclick do
+          notify_listeners(:on_submit)
+          # TODO move model.submit to the consumer and just trigger on_submit
           model.submit do |success|
-            presenter.edit_next_section if success
+            if success
+              result = presenter.edit_next_section
+              if result == :finished
+                notify_listeners(:finish)
+              end
+            end
           end
         end
       }

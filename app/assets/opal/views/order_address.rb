@@ -8,9 +8,9 @@ require 'views/editable_section'
 class OrderAddress
   include Glimmer::Web::Component
 
+  events :on_submit # TODO this might not be needed
   attributes :order, :address_name
   attr_reader :address_attribute, :title, :address
-  events :on_submit # TODO this might not be needed
   
   before_render do
     @address_attribute = "#{address_name.downcase}_address"
@@ -30,9 +30,9 @@ class OrderAddress
       saved_form_info {
         address_display(address:)
       }
-      on_submit {
+      on_finish {
         # TODO do work
-        notify_listeners(:on_submit) # TODO what do we pass as the object of the second argument?
+        $$.document.location.href = "/orders/#{order.id}"
       }
     }
   }
