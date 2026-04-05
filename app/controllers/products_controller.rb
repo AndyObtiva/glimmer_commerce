@@ -6,6 +6,7 @@ class ProductsController < ApplicationController
   # GET /products or /products.json
   def index
     @products = Product.limit(per_page).offset(page_offset)
+    @products = @products.where('UPPER(name) like ?', "%#{params[:filter_product_name].upcase}%") if params[:filter_product_name].present? # TODO split filter words and combine ilike conditions for them
     @page_count = (Product.count / per_page.to_f).ceil
     # TODO we need to serialize products differently with a collection serializer
     # to include the current per_page, the number of pages, and the current page
