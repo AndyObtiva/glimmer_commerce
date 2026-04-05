@@ -33,7 +33,6 @@ Things you may want to cover:
 - Filtering by brand
 - Filtering by gender
 - Filtering by age
-- Filtering by size
 - Sorting by Name: A to Z
 - Sorting by Name: A to A
 - Sorting by Price: Low to High

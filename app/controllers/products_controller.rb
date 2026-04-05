@@ -7,6 +7,10 @@ class ProductsController < ApplicationController
   def index
     @products = Product.limit(per_page).offset(page_offset)
     @products = @products.where('UPPER(name) like ?', "%#{params[:filter_product_name].upcase}%") if params[:filter_product_name].present? # TODO split filter words and combine ilike conditions for them
+    @products = @products.where(brand: params[:filter_product_brand]) if params[:filter_product_brand].present?
+    @products = @products.where(gender: params[:filter_product_gender]) if params[:filter_product_gender].present? # TODO refactor unify with previous filter
+    @products = @products.where(age: params[:filter_product_age]) if params[:filter_product_age].present? # TODO refactor unify with previous filter
+    @products = @products.order("#{sort_attribute} #{sort_direction}") if sort_attribute.present?
     @page_count = (Product.count / per_page.to_f).ceil
     # TODO we need to serialize products differently with a collection serializer
     # to include the current per_page, the number of pages, and the current page

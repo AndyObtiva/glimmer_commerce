@@ -14,4 +14,14 @@ module PaginationHelper
   def page_count
     @page_count || 1
   end
+  
+  def sort_attribute
+    # TODO validate sort attribute for security reasons
+    params[:sort_attribute]
+  end
+  
+  def sort_direction
+    # TODO validate sort direction for security reasons
+    params[:sort_direction] || 'asc'
+  end
 end

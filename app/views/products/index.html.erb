@@ -1,3 +1,7 @@
 <% content_for :title, "Products" %>
 
-<%= glimmer_component('views/product_list', products_attributes:, per_page:, page:, page_count:, filter_product_name:) %>
+<%= glimmer_component('views/product_list', products_attributes:,
+                                            per_page:, page:, page_count:,
+                                            filter_product_name: params[:filter_product_name]
+                                            # TODO other filters & sort direction
+) %>
