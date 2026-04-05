@@ -1,6 +1,6 @@
 module PaginationHelper
   def per_page
-    (params[:per_page] || 20).to_i
+    (params[:per_page] || 30).to_i
   end
   
   def page

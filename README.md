@@ -62,3 +62,43 @@ Things you may want to cover:
 
 - Setup ActiveStorage and update clothing product images
 - Do all page transitions locally with history.pushState or by definining a route container around every component's content (e.g. /products for product_list)
+
+## Exercises
+
+At the workshop:
+- Product list (name only) [using products_attributes hash]
+- Product list (name, brand, gender, age, and price)
+- Product list (name, brand, gender, age, price, and image)
+- Product list (name, brand, gender, age, price, and image) [using Frontend Product Model]
+- Product list (name, brand, gender, age, price, and image) [following provided HTML structure and CSS style]
+- Product list pagination links [navigation via anchor links]
+- Product list pagination links [following provided HTML structure and CSS style]
+- Product list pagination links [navigation via Frontend rendering with Content Data-Binding and REST API calls]
+- Product info (name only) [navigating via anchor link]
+- Product info (name, brand, gender, age, and price)
+- Product info (name, brand, gender, age, price, and image)
+- Product info (name, brand, gender, age, price, image, and description)
+- Product info (name, brand, gender, age, price, image, and description) [add back to products button]
+- Product info (name, brand, gender, age, price, image, and description) [navigation via Frontend rendering, including link back to products]
+- Product list sorting by product name
+- Product list sorting by product name or price
+- Product list filtering by product name
+- Product list filtering by product name and/or brand
+- Product list filtering by product name, brand, and/or gender
+- Product list filtering by product name, brand, gender, and/or age
+
+As extra learning homework after the workshop:
+- Add product to cart (quantity of 1 and size of M by default)
+- Add product to cart with specified quantity
+- Add product to cart with specified quantity and size
+- Display dialog for choosing whether to continue shopping or checkout cart
+- Checkout cart
+- Fill in Shipping Address
+- Fill in Billing Address
+- Fill in Payment Info
+- Place order and see order invoice
+- Adjust product quantity in checkout cart page
+
+## License
+
+MIT
