@@ -7,11 +7,11 @@ require 'views/product_list_item'
 class ProductList
   include Glimmer::Web::Component
 
-  attribute :products_attributes
+  attributes :products_attributes, :per_page, :page, :page_count
   attr_reader :presenter
 
   before_render do
-    @presenter = ProductCollectionPresenter.new(products_attributes)
+    @presenter = ProductCollectionPresenter.new(products_attributes:, per_page:, page:, page_count:)
   end
 
   markup {
@@ -21,6 +21,15 @@ class ProductList
         content(presenter, :products) do
           presenter.products.each do |product|
             product_list_item(product:, presenter:)
+          end
+        end
+      }
+      ul {
+        content(presenter, :product_pages) do
+          presenter.pages.each do |page|
+            li {
+              a(page, href: "/products?page=#{page}")
+            }
           end
         end
       }

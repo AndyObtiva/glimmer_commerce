@@ -1,9 +1,14 @@
 class ProductsController < ApplicationController
+  include PaginationHelper
+  
   before_action :set_product, only: %i[ show edit update destroy ]
 
   # GET /products or /products.json
   def index
-    @products = Product.all
+    @products = Product.limit(per_page).offset(page_offset)
+    @page_count = (Product.count / per_page.to_f).ceil
+    # TODO we need to serialize products differently with a collection serializer
+    # to include the current per_page, the number of pages, and the current page
   end
 
   # GET /products/1 or /products/1.json
@@ -58,13 +63,14 @@ class ProductsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_product
-      @product = Product.find(params[:id])
-    end
+  
+  # Use callbacks to share common setup or constraints between actions.
+  def set_product
+    @product = Product.find(params[:id])
+  end
 
-    # Only allow a list of trusted parameters through.
-    def product_params
-      params.require(:product).permit(:brand_id, :name, :description, :price)
-    end
+  # Only allow a list of trusted parameters through.
+  def product_params
+    params.require(:product).permit(:brand_id, :name, :description, :price)
+  end
 end
