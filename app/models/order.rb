@@ -8,6 +8,8 @@ class Order < ApplicationRecord
   accepts_nested_attributes_for :billing_address
   accepts_nested_attributes_for :payment_info
   
+  before_save :place_paid_order
+  
   def update_calculations!
     calculate_subtotal
     calculate_shipping
@@ -36,5 +38,9 @@ class Order < ApplicationRecord
   def calculate_total
     # TODO ensure only preserving 2 decimal points
     self.total = subtotal + shipping + sales_tax
+  end
+  
+  def place_paid_order
+    self.placed = true if payment_info&.valid?
   end
 end
