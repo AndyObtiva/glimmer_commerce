@@ -5,10 +5,9 @@ require 'views/address_form'
 require 'views/address_display'
 require 'views/editable_section'
 
-class OrderAddress
+class OrderAddressEditableSection
   include Glimmer::Web::Component
 
-  events :on_submit # TODO this might not be needed
   attributes :order, :address_name
   attr_reader :address_attribute, :title, :address
   
@@ -29,10 +28,6 @@ class OrderAddress
       }
       saved_form_info {
         address_display(address:)
-      }
-      on_finish {
-        # TODO do work
-        $$.document.location.href = "/orders/#{order.id}"
       }
     }
   }

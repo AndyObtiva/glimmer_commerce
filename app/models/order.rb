@@ -6,6 +6,7 @@ class Order < ApplicationRecord
   
   accepts_nested_attributes_for :shipping_address
   accepts_nested_attributes_for :billing_address
+  accepts_nested_attributes_for :payment_info
   
   def update_calculations!
     calculate_subtotal

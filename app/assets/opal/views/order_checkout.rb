@@ -1,10 +1,10 @@
 require 'glimmer-dsl-web'
 
-require 'models/product'
 require 'models/order_line'
 require 'models/order'
 require 'views/order_summary'
-require 'views/order_address'
+require 'views/order_address_editable_section'
+require 'views/payment_info_editable_section'
 
 class OrderCheckout
   include Glimmer::Web::Component
@@ -20,9 +20,9 @@ class OrderCheckout
     div {
       h1 { 'Checkout' }
       order_summary(order:)
-      order_address(order:, address_name: 'shipping')
-      order_address(order:, address_name: 'billing')
-#       payment_info(order:, editable_section_presenter:)
+      order_address_editable_section(order:, address_name: 'shipping')
+      order_address_editable_section(order:, address_name: 'billing')
+      payment_info_editable_section(order:)
     }
   }
   

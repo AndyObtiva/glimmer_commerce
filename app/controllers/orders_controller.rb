@@ -36,6 +36,7 @@ class OrdersController < ApplicationController
     params.require(:order).permit(
       shipping_address_attributes: [:id, :first_name, :last_name, :street, :city, :state_or_province, :zip_or_postal_code, :country, :phone, :email],
       billing_address_attributes: [:id, :first_name, :last_name, :street, :city, :state_or_province, :zip_or_postal_code, :country, :phone, :email],
+      payment_info_attributes: [:id, :card_number, :expiry_date, :security_code],
     )
   end
 end

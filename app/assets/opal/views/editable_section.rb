@@ -43,9 +43,9 @@ class EditableSection
           # TODO move model.submit to the consumer and just trigger on_submit
           model.submit do |success|
             if success
-              result = presenter.edit_next_section
+              result = presenter.edit_next_section # TODO should we make this a public method for consumer to call? or should we make model.submit a configured callback?
               if result == :finished
-                notify_listeners(:finish)
+                notify_listeners(:finish) # TODO should we support getting back return value of listener in consumer?
               end
             end
           end
