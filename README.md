@@ -36,7 +36,10 @@ to ensure Opal Ruby is working in the Frontend of the Rails web application.
 Check back on April 15, 2026 (2 days before the workshop) to pull the most up-to-date version of this project's code before the workshop takes place on April 17, 2026 at 14:00:
 ```
 git pull
-git db:reset
+rails db:drop
+rails db:create
+rails db:migrate
+rails db:seed
 ```
 
 ## Exercises
