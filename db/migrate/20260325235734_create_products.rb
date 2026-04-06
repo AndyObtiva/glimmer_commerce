@@ -7,6 +7,7 @@ class CreateProducts < ActiveRecord::Migration[7.2]
       t.string :age
       t.text :description
       t.decimal :price
+      t.string :image_path
 
       t.timestamps
     end

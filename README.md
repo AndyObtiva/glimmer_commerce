@@ -85,3 +85,5 @@ if they are indeed unrelated to the project code.
 [MIT](/LICENSE.txt)
 
 Copyright (c) 2026 Andy Maleh
+
+License of [images](https://publicdomainvectors.org/en/free-clipart/Green-t-shirt-vector-image/11653.html) is Public Domain Creative Commons

@@ -21,19 +21,19 @@ class Order < ApplicationRecord
   private
   
   def calculate_subtotal
-    self.subtotal = order_lines.sum(&:subtotal)
+    self.subtotal = order_lines.sum(&:subtotal).round(2)
   end
   
   def calculate_shipping
-    self.shipping = subtotal * 0.05
+    self.shipping = (subtotal * 0.05).round(2)
   end
   
   def calculate_sales_tax
-    self.sales_tax = (subtotal + shipping) * 0.10
+    self.sales_tax = ((subtotal + shipping) * 0.10).round(2)
   end
   
   def calculate_total
-    self.total = subtotal + shipping + sales_tax
+    self.total = (subtotal + shipping + sales_tax).round(2)
   end
   
   def place_paid_order
