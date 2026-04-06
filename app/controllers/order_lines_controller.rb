@@ -9,6 +9,8 @@ class OrderLinesController < ApplicationController
     end
   end
   
+  # TODO destroy order line
+  
   private
   
   def create_order_line

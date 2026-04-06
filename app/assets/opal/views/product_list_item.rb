@@ -11,9 +11,7 @@ class ProductListItem
   markup {
     li {
       # TODO navigate to product via Frontend, not Backend link (need to push the right URL in history)
-      a(href: product.resource_path) {
-        product.name
-      }
+      a(product.name, href: product.resource_path)
       span { " | $#{product.price}" }
     }
   }

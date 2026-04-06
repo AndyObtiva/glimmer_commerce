@@ -18,6 +18,7 @@ class ShoppingCart
 
   markup {
     div {
+      # TODO handle case of empty shopping cart
       order_summary(order:, checkout: true)
       div(class: 'cart') {
         h1 { 'Cart' }

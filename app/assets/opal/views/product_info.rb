@@ -44,7 +44,7 @@ class ProductInfo
       }
       unless product_info_only
         p {
-          a(href: '/products') { 'Back' }
+          a('Back', href: '/products')
         }
       end
     }
