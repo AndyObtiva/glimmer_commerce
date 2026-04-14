@@ -8,9 +8,14 @@ class ProductList
   markup {
     div {
       h1 { 'Product List' }
-      ul {
+      ul(style: {'list-style-type': 'none', 'padding': '0'}) {
         products_attributes['products'].each do |product_attributes|
-          li { "#{product_attributes['name']} | #{product_attributes['brand']} | #{product_attributes['gender']} | #{product_attributes['age']} | #{product_attributes['price']}`" }
+          li {
+            img(src: product_attributes['image_path'], width: 200)
+            div {
+              "#{product_attributes['name']} | #{product_attributes['brand']} | #{product_attributes['gender']} | #{product_attributes['age']} | #{product_attributes['price']}`"
+            }
+          }
         end
       }
     }

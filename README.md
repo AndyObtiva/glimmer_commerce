@@ -85,6 +85,10 @@ You can follow the steps of exercise solutions right away, especially when getti
 
 [docs/exercises/exercise-02-list-products-name-brand-gender-age-price.md](/docs/exercises/exercise-02-list-products-name-brand-gender-age-price.md)
 
+### Exercise 3 List Products (Name, Brand, Gender, Age, Price, and Image)
+
+[docs/exercises/exercise-03-list-products-name-brand-gender-age-price-image.md](/docs/exercises/exercise-03-list-products-name-brand-gender-age-price-image.md)
+
 ## Homework After The Workshop
 
 (solved fully in the `solution` branch)
