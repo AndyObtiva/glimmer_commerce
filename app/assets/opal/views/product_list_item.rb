@@ -11,4 +11,13 @@ class ProductListItem
       }
     }
   }
+  
+  style {
+    rule('li.product-list-item') {
+      flex '0 0 33.33333%'
+      min_width '375px'
+      max_width 'calc(33.33% - 20px)'
+      margin '20px 10px'
+    }
+  }
 end

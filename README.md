@@ -93,6 +93,10 @@ You can follow the steps of exercise solutions right away, especially when getti
 
 [docs/exercises/exercise-04-list-products-refactor.md](/docs/exercises/exercise-04-list-products-refactor.md)
 
+### Exercise 5 List Products (Style)
+
+[docs/exercises/exercise-05-list-products-style.md](/docs/exercises/exercise-05-list-products-style.md)
+
 ## Homework After The Workshop
 
 (solved fully in the `solution` branch)

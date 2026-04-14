@@ -16,11 +16,22 @@ class ProductList
   markup {
     div {
       h1 { 'Product List' }
-      ul(style: {'list-style-type': 'none', 'padding': '0'}) {
+      ul(class: 'products', style: {'list-style-type': 'none', 'padding': '0'}) {
         presenter.products.each do |product|
           product_list_item(product:)
         end
       }
+    }
+  }
+  
+  style {
+    rule('ul.products') {
+      padding '0'
+      list_style_type 'none'
+      display 'flex'
+      flex_wrap 'wrap'
+      align_items 'stretch'
+      max_width '1185px'
     }
   }
 end
