@@ -2,7 +2,7 @@
 
 Feature: See a list of products with name, brand, gender, age, price, and image, in rows of 3 products per row, on the home page.
 
-Topics: MVP, Glimmer Web Components
+Topics: Glimmer HTML DSL, GLimmer CSS DSL, html_to_glimmer, css_to_glimmer, Glimmer Web Components
 
 Usecase:
 
