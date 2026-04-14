@@ -89,6 +89,10 @@ You can follow the steps of exercise solutions right away, especially when getti
 
 [docs/exercises/exercise-03-list-products-name-brand-gender-age-price-image.md](/docs/exercises/exercise-03-list-products-name-brand-gender-age-price-image.md)
 
+### Exercise 4 List Products (Refactor)
+
+[docs/exercises/exercise-04-list-products-refactor.md](/docs/exercises/exercise-04-list-products-refactor.md)
+
 ## Homework After The Workshop
 
 (solved fully in the `solution` branch)
