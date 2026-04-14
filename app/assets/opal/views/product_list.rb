@@ -10,7 +10,7 @@ class ProductList
       h1 { 'Product List' }
       ul {
         products_attributes['products'].each do |product_attributes|
-          li { product_attributes['name'] }
+          li { "#{product_attributes['name']} | #{product_attributes['brand']} | #{product_attributes['gender']} | #{product_attributes['age']} | #{product_attributes['price']}`" }
         end
       }
     }
