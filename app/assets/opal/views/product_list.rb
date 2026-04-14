@@ -13,7 +13,7 @@ class ProductList
           li {
             img(src: product_attributes['image_path'], width: 200)
             div {
-              "#{product_attributes['name']} | #{product_attributes['brand']} | #{product_attributes['gender']} | #{product_attributes['age']} | #{product_attributes['price']}`"
+              "#{product_attributes['name']} | #{product_attributes['brand']} | #{product_attributes['gender']} | #{product_attributes['age']} | $#{'%.2f' % product_attributes['price']}"
             }
           }
         end
