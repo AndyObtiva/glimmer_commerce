@@ -1,41 +1,51 @@
-# Glimmer Commerce
-## Rails Web App for Building Rails SPAs in Frontend Ruby with Glimmer DSL for Web at Wroclove.rb Ruby Conference 2026
-### Author: Andy Maleh (Fukuoka 2022/2025 Winner / RubyConf/RailsConf Speaker / Ruby OSS Author / MS in Software Engineering)
+# Glimmer Commerce (E-commerce Exercise Web App)
+## Wroclove.rb 2026 Workshop: Building Rails SPAs in Frontend Ruby with Glimmer DSL for Web
+### Author: Andy Maleh (Fukuoka 2022/2025 Winner / MS in Software Engineering)
 
 Glimmer Commerce is a Ruby on Rails e-commerce web application that will be developed through a series of step-by-step
 exercises at the Wroclove.rb 2026 Ruby Conference using [Opal Ruby](https://opalrb.com/) in the Frontend of Rails and [Glimmer DSL for Web](https://github.com/AndyObtiva/glimmer-dsl-web),
 a Ruby-in-the-Browser Frontend Framework for Rails that [won a Fukuoka Prefecture Future IT Initiative 2025 award](https://andymaleh.blogspot.com/2025/01/glimmer-dsl-for-web-wins-in-fukuoka.html)
 by Matz, the creator of Ruby, and other Fukuoka competition judges.
 
-Please make sure to setup this project on your machine ahead of the conference workshop, as per the setup instructions below.
-
-Check back on April 15, 2026 (2 days before the workshop) to pull the most up-to-date version of this project's code before
-the workshop takes place on April 17, 2026 at 14:00.
+**[IMPORTANT]** Please make sure to set up this project on your machine ahead of the conference workshop, as per the setup instructions below, as there is
+no guarantee that there would be Internet at the event. That has to be done after April 15, 2026 00:00 Eastern Time (06:00 in Wroclaw, Poland) to pull the
+most up-to-date version of this project's code before the workshop takes place on April 17, 2026 at 14:00. There will be a USB thumb drive at the event just in case some attendees drop in without having pre-downloaded the GitHub repo,
+but it would still be better for others to set up the repo ahead of the event.
 
 Given that the Wroclove.rb event will be a workshop, we will quickly hit the ground running at the event through a series of hands-on
 exercises without going through a long presentation, so it would be recommended that you familiarize yourself with
 [Glimmer DSL for Web](https://github.com/AndyObtiva/glimmer-dsl-web) in advance by going through some project material on your own first:
-- [Required] Fukuoka Prefecture Future IT Initiative 2025 Award Slide Deck: https://andymaleh.blogspot.com/2025/01/glimmer-dsl-for-web-wins-in-fukuoka.html
+- [Required] Fukuoka Prefecture Future IT Initiative 2025 Award Presentation Slides: https://andymaleh.blogspot.com/2025/01/glimmer-dsl-for-web-wins-in-fukuoka.html
 - [Optional] Glimmer DSL for Web GitHub: https://github.com/AndyObtiva/glimmer-dsl-web (if possible, read through Usage, Hello World, Hello Button, Hello Observer Data-Binding, Hello Form MVP, and Hello glimmer_component Rails Helper!)
 - [Optional] Frontend Ruby with Glimmer DSL for Web at Ruby on Rio 2025-06-06: https://www.youtube.com/watch?v=LY6ulYICuzE
 - [Optional] Frontend Ruby with Glimmer DSL for Web at /dev/mtl 2024: https://www.youtube.com/watch?v=J2VIY9DMJo4
 
 ## Setup Instructions
 
+**[IMPORTANT]** The repo must be pulled after April 15, 2026 00:00 Eastern Time (06:00 in Wroclaw, Poland) to ensure having
+the most up to date code that is required for the workshop as there is no guarantee that there would be Internet at the event.
+There will be a USB thumb drive at the event just in case some attendees drop in without having pre-downloaded the GitHub repo,
+but it would still be better for others to set up the repo ahead of the event.
+
 Run:
 ```
 git clone https://github.com/AndyObtiva/glimmer_commerce.git
 cd glimmer_commerce
+git fetch origin
 bundle
 rails db:setup
 rails s
 ```
 
-Visit localhost:3000, click test button, and make sure you see a message confirming test success,
+Visit http://localhost:3000/ , click the test button, and make sure you see a message confirming test success,
 to ensure Opal Ruby is working in the Frontend of the Rails web application.
 
-Check back on April 15, 2026 (2 days before the workshop) to pull the most up-to-date version of this project's code before the workshop takes place on April 17, 2026 at 14:00:
+**[IMPORTANT]** If you have set up the project already in advance and later discover a new version has been uploaded to the repo,
+please follow these instructions to update your repo and project:
+
 ```
+cd glimmer_commerce
+git fetch origin
 git pull
 rails db:drop
 rails db:create
@@ -43,29 +53,56 @@ rails db:migrate
 rails db:seed
 ```
 
+## Troubleshooting Tips
+
+Although there is a chance you will not run into any trouble, it would be useful to know these troubleshooting tips
+in case you run into some trouble during the exercises:
+- During exercise work, if you ever get weird Opal errors that do not relate to the project code, stop the Rails server,
+run `rm -rf tmp/cache`, and then start the rails server again with `rails s`. Afterwards, refresh the website, and the errors should go away
+if they are indeed unrelated to the project code.
+- If the Rails server ever gets stuck (e.g. `SystemStackError: stack level too deep`), run `ps`, find the Rails server process number,
+and then run `kill -9 rails_server_process_number`.
+
 ## Exercises
 
-At the workshop (about 10 minutes per exercise):
+(solved fully in the `solution` branch)
+
+These exercises will build a Rails e-commerce web app with Frontend Ruby using Glimmer DSL for Web and Opal (Ruby-to-JavaScript Transpiler).
+
+Every exercise includes:
+- Feature: the feature being developed.
+- Topics: what topics in Glimmer DSL for Web you are learning through the exercise.
+- Usecase: what is required by the solution from the user point of view.
+- Tips: helpful tips to help figure out the solution.
+- Steps: what steps to follow to do the exercise.
+- Solution: the code of all the files that needed changes to solve the exercise.
+
+You can follow the steps of exercise solutions right away, especially when getting started with the workshop, but later on, you could optionally challenge yourself and attempt to solve some exercises on your own without looking at their solution right away.
+
+Exercise list (about 10 minutes per exercise):
+- Hello Data Binding
 - Product list (name only) [using products_attributes hash]
 - Product list (name, brand, gender, age, and price)
 - Product list (name, brand, gender, age, price, and image)
 - Product list (name, brand, gender, age, price, and image) [using Frontend Product Model]
 - Product list (name, brand, gender, age, price, and image) [following provided HTML structure and CSS style]
-- Product list pagination links [navigation via anchor links]
-- Product list pagination links [following provided HTML structure and CSS style]
-- Product list pagination links [navigation via Frontend rendering with Content Data-Binding and REST API calls]
 - Product info (name only) [navigating via anchor link]
-- Product info (name, brand, gender, age, and price)
-- Product info (name, brand, gender, age, price, and image)
-- Product info (name, brand, gender, age, price, image, and description)
-- Product info (name, brand, gender, age, price, image, and description) [add back to products button]
-- Product info (name, brand, gender, age, price, image, and description) [navigation via Frontend rendering, including link back to products]
-- Product list sorting by product name
-- Product list sorting by product name or price
-- Product list filtering by product name
+- Product info (name, brand, gender, age, price, description, and image)
+- Product info (name, brand, gender, age, price, description, and image) [Frontend navigation via component page link]
+- Product info (name, brand, gender, age, price, description, and image) [add back to products component page link]
+- Product list filtering by product name (implement with content-data-binding and Rails::ResourceService)
+- Product list sorting by id, name, or price (implement with content-data-binding and Rails::ResourceService)
+- Product list pagination links [implement with content-data-binding and Rails::ResourceService, following provided HTML structure and CSS style]
+
+Bonus:
 - Product list filtering by product name, brand, gender, and/or age
 
-As extra learning homework after the workshop:
+
+## Homework After The Workshop
+
+(solved fully in the `solution` branch)
+
+After the workshop is done, you could implement these exercises on your own to improve your skills further in Glimmer DSL for Web:
 - Add product to cart (quantity of 1 and size of M by default)
 - Add product to cart with specified quantity
 - Add product to cart with specified quantity and size
@@ -77,10 +114,6 @@ As extra learning homework after the workshop:
 - Place order and see order invoice
 - Adjust product quantity in checkout cart page
 - Remove product in checkout cart page
-
-Troubleshooting tip: During exercise work, if you ever get weird Opal errors that do not relate to the project code, stop the Rails server,
-run `rm -rf tmp/cache`, and then start the rails server again with `rails s`. Afterwards, refresh the website, and the errors should go away
-if they are indeed unrelated to the project code.
 
 ## License
 
