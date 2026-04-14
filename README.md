@@ -1,5 +1,6 @@
 # Glimmer Commerce
 ## Rails Web App for Building Rails SPAs in Frontend Ruby with Glimmer DSL for Web at Wroclove.rb Ruby Conference 2026
+### Author: Andy Maleh (Fukuoka 2022/2025 Winner / RubyConf/RailsConf Speaker / Ruby OSS Author / MS in Software Engineering)
 
 Glimmer Commerce is a Ruby on Rails e-commerce web application that will be developed through a series of step-by-step
 exercises at the Wroclove.rb 2026 Ruby Conference using [Opal Ruby](https://opalrb.com/) in the Frontend of Rails and [Glimmer DSL for Web](https://github.com/AndyObtiva/glimmer-dsl-web),
@@ -75,6 +76,7 @@ As extra learning homework after the workshop:
 - Fill in Payment Info
 - Place order and see order invoice
 - Adjust product quantity in checkout cart page
+- Remove product in checkout cart page
 
 Troubleshooting tip: During exercise work, if you ever get weird Opal errors that do not relate to the project code, stop the Rails server,
 run `rm -rf tmp/cache`, and then start the rails server again with `rails s`. Afterwards, refresh the website, and the errors should go away

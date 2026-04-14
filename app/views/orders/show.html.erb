@@ -1,5 +1,5 @@
 <% if params[:id] == 'shopping_cart' %>
-  <!-- shopping cart glimmer_component goes here -->
+  <%= glimmer_component('views/shopping_cart', order_attributes:) %>
 <% else %>
-  <!-- order info glimmer_component goes here -->
+  <%= glimmer_component('views/order_info', order_attributes:) %>
 <% end %>

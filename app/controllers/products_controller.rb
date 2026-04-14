@@ -1,17 +1,21 @@
 class ProductsController < ApplicationController
   include PaginationHelper
+  include ProductsHelper
   
   before_action :set_product, only: %i[ show edit update destroy ]
 
   # GET /products or /products.json
   def index
-    @products = Product.limit(per_page).offset(page_offset)
-    @products = @products.where('UPPER(name) like ?', "%#{params[:filter_product_name].upcase}%") if params[:filter_product_name].present?
-    @products = @products.where(brand: params[:filter_product_brand]) if params[:filter_product_brand].present?
-    @products = @products.where(gender: params[:filter_product_gender]) if params[:filter_product_gender].present?
-    @products = @products.where(age: params[:filter_product_age]) if params[:filter_product_age].present?
+    @products = Product.all
+    filter_products
+    @page_count = (@products.count / per_page.to_f).ceil
     @products = @products.order("#{sort_attribute} #{sort_direction}") if sort_attribute.present?
-    @page_count = (Product.count / per_page.to_f).ceil
+    @products = @products.limit(per_page).offset(page_offset)
+    @products = ProductsSerializer.new(@products,
+      per_page:, page:, page_count:,
+      filter_product_name:, filter_product_brand:, filter_product_gender:, filter_product_age:,
+      sort_attribute:, sort_direction:
+    ).serializable_hash
   end
 
   # GET /products/1 or /products/1.json
@@ -75,5 +79,21 @@ class ProductsController < ApplicationController
   # Only allow a list of trusted parameters through.
   def product_params
     params.require(:product).permit(:brand_id, :name, :description, :price)
+  end
+  
+  def filter_products
+    @products = @products.where('UPPER(name) like ?', "%#{params[:filter_product_name].upcase}%") if params[:filter_product_name].present?
+    if params[:filter_product_brand].present?
+      brands = params[:filter_product_brand].split(',')
+      @products = @products.where(brand: brands)
+    end
+    if params[:filter_product_gender].present?
+      genders = params[:filter_product_gender].split(',')
+      @products = @products.where(gender: genders)
+    end
+    if params[:filter_product_age].present?
+      ages = params[:filter_product_age].split(',')
+      @products = @products.where(age: ages)
+    end
   end
 end
