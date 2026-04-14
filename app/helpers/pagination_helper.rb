@@ -16,10 +16,12 @@ module PaginationHelper
   end
   
   def sort_attribute
-    params[:sort_attribute]
+    raise 'Unsupported sort attribute!' if params[:sort_attribute].present? && !params[:sort_attribute].in?(Product.attribute_names)
+    params[:sort_attribute] || 'id'
   end
   
   def sort_direction
+    raise 'Unsupported sort direction!' if params[:sort_direction].present? && !params[:sort_direction].in?(['asc', 'desc'])
     params[:sort_direction] || 'asc'
   end
 end

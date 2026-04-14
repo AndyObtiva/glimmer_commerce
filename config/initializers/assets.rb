@@ -12,5 +12,7 @@ Rails.application.config.assets.version = "1.0"
 # Rails.application.config.assets.precompile += %w[ admin.js admin.css ]
 
 Opal.use_gem 'glimmer-dsl-web'
+Opal.use_gem 'glimmer-web-components'
 Opal.append_path Rails.root.join('app', 'assets', 'opal')
+Opal.append_path Rails.root.join('app', 'fullstack')
 Rails.application.config.assets.precompile += %w[manifest.opal.js]

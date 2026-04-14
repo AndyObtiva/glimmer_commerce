@@ -1,5 +1,6 @@
 # Glimmer Commerce
 ## Rails Web App for Building Rails SPAs in Frontend Ruby with Glimmer DSL for Web at Wroclove.rb Ruby Conference 2026
+### Author: Andy Maleh (Fukuoka 2022/2025 Winner / RubyConf/RailsConf Speaker / Ruby OSS Author / MS in Software Engineering)
 
 Glimmer Commerce is a Ruby on Rails e-commerce web application that will be developed through a series of step-by-step
 exercises at the Wroclove.rb 2026 Ruby Conference using [Opal Ruby](https://opalrb.com/) in the Frontend of Rails and [Glimmer DSL for Web](https://github.com/AndyObtiva/glimmer-dsl-web),
@@ -75,10 +76,57 @@ As extra learning homework after the workshop:
 - Fill in Payment Info
 - Place order and see order invoice
 - Adjust product quantity in checkout cart page
+- Remove product in checkout cart page
 
 Troubleshooting tip: During exercise work, if you ever get weird Opal errors that do not relate to the project code, stop the Rails server,
 run `rm -rf tmp/cache`, and then start the rails server again with `rails s`. Afterwards, refresh the website, and the errors should go away
 if they are indeed unrelated to the project code.
+
+## TODO
+
++ List products
+* ProductSerializer
+* Pagination
+- Pagination with automatic fetching of the rest of the products in the background (if a future page was loaded already, then navigating to it is instant)
+* Filtering by product name (full text search) + filter component
+- Filtering by brand
+- Filtering by gender
+- Filtering by age
+- Sorting by Name: A to Z
+- Sorting by Name: A to A
+- Sorting by Price: Low to High
+- Sorting by Price: High to Low
+* Show 15 items per page
+- Show 30 items per page
+- Show 60 items per page
+
+* See product (including gender and age)
++ Select product size
++ Modify quantity for adding to shopping cart
+* Add to cart (with an animation [svg?] that shows the product getting added to the shopping cart icon, updating the cart item count badge)
+- Show Shopping Cart icon in the top-right
+
+* View My Cart (with items, subtotal, shipping, taxes, and total)
+- Tweak quantities
+- Remove items
+
+* Checkout
+* Complete Cart steps (with accordion UI): Fill in Shipping address -> Fill in Billing Address -> Fill in Payment Information -> See Order Review Page and Confirm Order
+
+* See Order Invoice
+
+- Styling
+
+- Do all page transitions locally with history.pushState or by definining a route container around every component's content (e.g. /products for product_list)
+
+Remaining backend tasks:
+Important:
++ Final DB seeds with images, lorem ipsum, and better product names
+- Product collection serializer including pagination information
+Less Important:
+- Remove items (destroy order lines)
+- Change item quantity in shopping cart (update order lines)
+- Address and ProductInfo validations
 
 ## License
 

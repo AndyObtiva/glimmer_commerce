@@ -9,6 +9,16 @@ class OrderLinesController < ApplicationController
     end
   end
   
+  def destroy
+    @order_line = OrderLine.find(params[:id])
+    @order_line.destroy!
+
+    respond_to do |format|
+      format.html { redirect_to products_path, notice: "Order line was successfully destroyed.", status: :see_other }
+      format.json { head :no_content }
+    end
+  end
+  
   private
   
   def create_order_line
