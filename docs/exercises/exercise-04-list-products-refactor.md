@@ -18,6 +18,7 @@ Steps:
 Tips:
 
 - `Product` can be implemented simply using Ruby `Struct` by passing all the necessary attribute symbols to the constructor + `keyword_init: true` to ensure `Product` has an initializer that can take keyword arguments (e.g. `User = Struct.new(:email, :password, keyword_init: true)`).
+- You can add methods to a `Struct` class by opening a multi-line Ruby block in front of the `Struct()` call, like this: `SomeModel = Struct.new(:attribute, keyword_init: true) do; def formatted_attribute; someimplementation; end; end`. This is useful to implement a `formatted_price` method from the original product price.
 - Each product hash coming from the Backend has the following product attributes: `'id', 'name', 'description', 'price', 'brand', 'gender', 'age', 'image_path', 'created_at', 'updated_at', 'resource_path'`
 - You can convert `products_attributes['products']` to `Product` instances inside a `@products` instance variable by adding a `before_render do end` block above `markup` in `ProductList` and then use `@products` inside markup to render `li` elements using product Model attributes
 - In Opal, you can require Ruby files relative to `app/assets/opal` just like you do in any other Ruby app (e.g. `require 'models/user'` to use a file at `app/assets/opal/models/user`)
@@ -62,7 +63,11 @@ end
 
 `app/assets/opal/models/product.rb`:
 ```ruby
-Product = Struct.new(:id, :name, :description, :price, :brand, :gender, :age, :image_path, :created_at, :updated_at, :resource_path, keyword_init: true)
+Product = Struct.new(:id, :name, :description, :price, :brand, :gender, :age, :image_path, :created_at, :updated_at, :resource_path, keyword_init: true) do
+  def formatted_price
+    "$#{'%.2f' % price}"
+  end
+end
 ```
 
 `app/assets/opal/presenters/product_list_presenter.rb`:
@@ -89,7 +94,7 @@ class ProductListItem
     li {
       img(src: product.image_path, width: 200)
       div {
-        "#{product.name} | #{product.brand} | #{product.gender} | #{product.age} | #{product.price}`"
+        "#{product.name} | #{product.brand} | #{product.gender} | #{product.age} | #{product.formatted_price}"
       }
     }
   }
