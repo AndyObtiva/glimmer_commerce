@@ -14,7 +14,11 @@ class ProductInfo
   
   markup {
     div {
-      h1 { product.name }
+      h1 { "#{product.name} - #{product.age} / #{product.gender}" }
+      h3 { product.brand }
+      img(src: product.image_path, width: 200)
+      h2 { product.formatted_price }
+      p { product.description }
     }
   }
 end

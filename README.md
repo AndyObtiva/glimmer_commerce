@@ -101,6 +101,10 @@ You can follow the steps of exercise solutions right away, especially when getti
 
 [docs/exercises/exercise-06-show-product-info-name-only.md](/docs/exercises/exercise-06-show-product-info-name-only.md)
 
+### Exercise 7 Show Product Info (Name, Brand, Gender, Age, Price, Image, and Description)
+
+[docs/exercises/exercise-07-show-product-info-name-brand-gender-age-price-image-description.md](/docs/exercises/exercise-07-show-product-info-name-brand-gender-age-price-image-description.md)
+
 ## Homework After The Workshop
 
 (solved fully in the `solution` branch)
