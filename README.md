@@ -117,6 +117,10 @@ You can follow the steps of exercise solutions right away, especially when getti
 
 [docs/exercises/exercise-10-sort-products.md](/docs/exercises/exercise-10-sort-products.md)
 
+### Exercise 11 Paginate Products
+
+[docs/exercises/exercise-11-paginate-products.md](/docs/exercises/exercise-11-paginate-products.md)
+
 ## Homework After The Workshop
 
 (solved fully in the `solution` branch)

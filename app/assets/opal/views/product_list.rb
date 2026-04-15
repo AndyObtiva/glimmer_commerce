@@ -54,6 +54,20 @@ class ProductList
           end
         }
       }
+      ul(class: 'pages') {
+        content(presenter, :pages) do
+          presenter.pages.each do |page|
+            li {
+              a(page, href: "") {
+                onclick do |event|
+                  event.prevent_default
+                  presenter.go_to_page(page)
+                end
+              }
+            }
+          end
+        end
+      }
     }
   }
   
@@ -81,6 +95,15 @@ class ProductList
     
     r('.sort-container select') {
       margin_right 5
+    }
+    
+    r('ul.pages') {
+      padding 0
+    }
+    
+    r('ul.pages li') {
+      display :inline
+      padding '0 5px'
     }
   }
 end
