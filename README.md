@@ -97,6 +97,10 @@ You can follow the steps of exercise solutions right away, especially when getti
 
 [docs/exercises/exercise-05-list-products-style.md](/docs/exercises/exercise-05-list-products-style.md)
 
+### Exercise 6 Show Product Info (Name Only)
+
+[docs/exercises/exercise-06-show-product-info-name-only.md](/docs/exercises/exercise-06-show-product-info-name-only.md)
+
 ## Homework After The Workshop
 
 (solved fully in the `solution` branch)
