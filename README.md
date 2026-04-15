@@ -105,6 +105,10 @@ You can follow the steps of exercise solutions right away, especially when getti
 
 [docs/exercises/exercise-07-show-product-info-name-brand-gender-age-price-image-description.md](/docs/exercises/exercise-07-show-product-info-name-brand-gender-age-price-image-description.md)
 
+### Exercise 8 Show Product Info (Instant Frontend Rendering)
+
+[docs/exercises/exercise-08-show-product-info-instant-frontend-rendering.md](/docs/exercises/exercise-08-show-product-info-instant-frontend-rendering.md)
+
 ## Homework After The Workshop
 
 (solved fully in the `solution` branch)

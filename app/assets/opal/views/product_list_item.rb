@@ -1,3 +1,5 @@
+require 'views/product_info'
+
 class ProductListItem
   include Glimmer::Web::Component
 
@@ -5,11 +7,11 @@ class ProductListItem
       
   markup {
     li {
-      a(href: product.resource_path) {
+      page_component_link(component_class: ProductInfo, component_attributes: {product_attributes: product.to_h}, page_url: product.resource_path) {
         img(src: product.image_path, width: 200)
       }
       div {
-        a(href: product.resource_path) { product.name }
+        page_component_link(text: product.name, component_class: ProductInfo, component_attributes: {product_attributes: product.to_h}, page_url: product.resource_path)
         span { " | #{product.brand} | #{product.gender} | #{product.age} | #{product.formatted_price}" }
       }
     }

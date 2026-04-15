@@ -19,6 +19,9 @@ class ProductInfo
       img(src: product.image_path, width: 200)
       h2 { product.formatted_price }
       p { product.description }
+      div {
+        page_component_link(text: 'Back to products', page_url: '/')
+      }
     }
   }
 end
