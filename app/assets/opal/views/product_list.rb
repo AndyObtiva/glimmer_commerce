@@ -16,22 +16,42 @@ class ProductList
   markup {
     div {
       h1 { 'Product List' }
-      ul(class: 'products', style: {'list-style-type': 'none', 'padding': '0'}) {
-        presenter.products.each do |product|
-          product_list_item(product:)
-        end
+      div {
+        input(type: :text, placeholder: 'product name filter') {
+          value <=> [presenter, :filter_product_name]
+        }
+      }
+      div(class: 'displaying-products-label-container') {
+        label {
+          inner_text <= [presenter, :displaying_products_text, computed_by: [:filter_product_name]]
+        }
+      }
+      ul(class: 'products') {
+        content(presenter, :products) {
+          if presenter.products.any?
+            presenter.products.each do |product|
+              product_list_item(product:)
+            end
+          else
+            li { "There are no products that match your search." }
+          end
+        }
       }
     }
   }
   
   style {
-    rule('ul.products') {
+    r('ul.products') {
       padding '0'
       list_style_type 'none'
       display 'flex'
       flex_wrap 'wrap'
       align_items 'stretch'
-      max_width '1185px'
+      max_width '1215px'
+    }
+    
+    r('.displaying-products-label-container') {
+      margin_top 10
     }
   }
 end

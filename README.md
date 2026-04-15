@@ -109,6 +109,10 @@ You can follow the steps of exercise solutions right away, especially when getti
 
 [docs/exercises/exercise-08-show-product-info-instant-frontend-rendering.md](/docs/exercises/exercise-08-show-product-info-instant-frontend-rendering.md)
 
+### Exercise 9 Filter Products By Name
+
+[docs/exercises/exercise-09-filter-products-by-name.md](/docs/exercises/exercise-09-filter-products-by-name.md)
+
 ## Homework After The Workshop
 
 (solved fully in the `solution` branch)
