@@ -57,6 +57,9 @@ rails db:seed
 
 Although there is a chance you will not run into any trouble, it would be useful to know these troubleshooting tips
 in case you run into some trouble during the exercises:
+- When running into Opal Ruby errors, there are 2 classes of errors:
+  - Compilation Errors: Errors that show a Rails error page with a stack trace, which happen during Opal compilation of Ruby code (e.g. missing `end` for a method or a block, bad random characters in the file, etc...). These errors can be seen in full detail in the Rails server log in the command line. So, make sure to check there if you get a Rails error page.
+  - Execution Errors: Errors that happen in the Browser upon executing JavaScript compiled from Ruby. The webpage does load up, but the Frontend behavior is broken in those cases (e.g. no elements are displapyed, some element is missing, or some button does not function, etc...). These errors can be seen in full detail in the Browser Console, but do not attempt to read the class name reponsible in the printed stack trace. Instead, press on the expand arrow to open the Ruby source map stack trace below, and then search from top to bottom for the first Opal Ruby file name that appears related to your work, and look at what line number the error is referring to. You can even click on the file name and see Ruby code in the Browser directly if you want.
 - During exercise work, if you ever get weird Opal errors that do not relate to the project code, stop the Rails server,
 run `rm -rf tmp/cache`, and then start the rails server again with `rails s`. Afterwards, refresh the website, and the errors should go away
 if they are indeed unrelated to the project code.
