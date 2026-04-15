@@ -113,6 +113,10 @@ You can follow the steps of exercise solutions right away, especially when getti
 
 [docs/exercises/exercise-09-filter-products-by-name.md](/docs/exercises/exercise-09-filter-products-by-name.md)
 
+### Exercise 10 Sort Products
+
+[docs/exercises/exercise-10-sort-products.md](/docs/exercises/exercise-10-sort-products.md)
+
 ## Homework After The Workshop
 
 (solved fully in the `solution` branch)

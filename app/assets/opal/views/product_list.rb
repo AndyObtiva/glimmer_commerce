@@ -16,6 +16,23 @@ class ProductList
   markup {
     div {
       h1 { 'Product List' }
+      div(class: 'sort-container') {
+        label { 'Sort:' }
+        select {
+          value <=> [presenter, :sort_attribute]
+          
+          presenter.class::SORT_ATTRIBUTES.each do |sort_attribute|
+            option(value: sort_attribute) { presenter.sort_attribute_text(sort_attribute) }
+          end
+        }
+        select {
+          value <=> [presenter, :sort_direction]
+          
+          presenter.class::SORT_DIRECTION_TO_TEXT.each do |sort_direction, sort_direction_display|
+            option(value: sort_direction) { sort_direction_display }
+          end
+        }
+      }
       div {
         input(type: :text, placeholder: 'product name filter') {
           value <=> [presenter, :filter_product_name]
@@ -23,7 +40,7 @@ class ProductList
       }
       div(class: 'displaying-products-label-container') {
         label {
-          inner_text <= [presenter, :displaying_products_text, computed_by: [:filter_product_name]]
+          inner_text <= [presenter, :displaying_products_text, computed_by: [:filter_product_name, :sort_attribute, :sort_direction]]
         }
       }
       ul(class: 'products') {
@@ -52,6 +69,18 @@ class ProductList
     
     r('.displaying-products-label-container') {
       margin_top 10
+    }
+    
+    r('.sort-container') {
+      margin_bottom 10
+    }
+    
+    r('.sort-container label') {
+      margin_right 5
+    }
+    
+    r('.sort-container select') {
+      margin_right 5
     }
   }
 end
