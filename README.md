@@ -17,7 +17,7 @@ but it would still be better for others to set up the repo ahead of the event.
 Given that the Wroclove.rb event will be a workshop, we will quickly hit the ground running at the event through a series of hands-on
 exercises without going through a long presentation, so it would be recommended that you familiarize yourself with
 [Glimmer DSL for Web](https://github.com/AndyObtiva/glimmer-dsl-web) in advance by going through some project material on your own first:
-- [Required] Fukuoka Prefecture Future IT Initiative 2025 Award Presentation Slides: https://andymaleh.blogspot.com/2025/01/glimmer-dsl-for-web-wins-in-fukuoka.html
+- [Required] Fukuoka Prefecture Future IT Initiative 2025 Award Presentation Slides: https://andymaleh.blogspot.com/2025/01/glimmer-dsl-for-web-wins-in-fukuoka.html (also available [inside the GitHub repo under presentations](/presentations/Fukuoka%20Prefecture%20Future%20IT%20Initiative%202025%20-%20Glimmer%20DSL%20for%20Web%20-%20Ruby%20Web%20Frontend%20Framework%20-%20Andy%20Maleh.pdf))
 - [Optional] Glimmer DSL for Web GitHub: https://github.com/AndyObtiva/glimmer-dsl-web (if possible, read through Usage, Hello World, Hello Button, Hello Observer Data-Binding, Hello Form MVP, and Hello glimmer_component Rails Helper!)
 - [Optional] Frontend Ruby with Glimmer DSL for Web at Ruby on Rio 2025-06-06: https://www.youtube.com/watch?v=LY6ulYICuzE
 - [Optional] Frontend Ruby with Glimmer DSL for Web at /dev/mtl 2024: https://www.youtube.com/watch?v=J2VIY9DMJo4
