@@ -16,7 +16,7 @@ class ProductList
   markup {
     div {
       h1 { 'Product List' }
-      ul(class: 'products', style: {'list-style-type': 'none', 'padding': '0'}) {
+      ul(class: 'products') {
         presenter.products.each do |product|
           product_list_item(product:)
         end
