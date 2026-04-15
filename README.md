@@ -22,6 +22,10 @@ exercises without going through a long presentation, so it would be recommended 
 - [Optional] Frontend Ruby with Glimmer DSL for Web at Ruby on Rio 2025-06-06: https://www.youtube.com/watch?v=LY6ulYICuzE
 - [Optional] Frontend Ruby with Glimmer DSL for Web at /dev/mtl 2024: https://www.youtube.com/watch?v=J2VIY9DMJo4
 
+**The workshop does also come with presentation slides for attendees to refer to when needing help with the exercises:**
+- Available online at: https://docs.google.com/presentation/d/e/2PACX-1vS-bVAY9FjCUkfDOrQ3gMX2vsNy3rAghghoX_I9O5zO3t7kukn7XFUFlmd6mQTIPFF9umvvk1WC5gAJ/pub?start=false&loop=false&delayms=60000
+- Available [inside the GitHub repo under presentations](/presentations/Building%20Rails%20SPAs%20in%20Frontend%20Ruby%20with%20Glimmer%20DSL%20for%20Web%20-%20Andy%20Maleh%20-%20Wroclove.rb%202026-04-17.pdf)
+
 ## Setup Instructions
 
 **[IMPORTANT]** The repo must be pulled after April 15, 2026 00:00 Eastern Time (06:00 in Wroclaw, Poland) to ensure having
