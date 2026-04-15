@@ -12,6 +12,8 @@ no guarantee that there would be Internet at the event. That has to be done afte
 most up-to-date version of this project's code before the workshop takes place on April 17, 2026 at 14:00. There will be a USB thumb drive at the event just in case some attendees drop in without having pre-downloaded the GitHub repo,
 but it would still be better for others to set up the repo ahead of the event.
 
+![screenshots/glimmer-commerce.png](/screenshots/glimmer-commerce.png)
+
 Given that the Wroclove.rb event will be a workshop, we will quickly hit the ground running at the event through a series of hands-on
 exercises without going through a long presentation, so it would be recommended that you familiarize yourself with
 [Glimmer DSL for Web](https://github.com/AndyObtiva/glimmer-dsl-web) in advance by going through some project material on your own first:
@@ -24,7 +26,7 @@ exercises without going through a long presentation, so it would be recommended 
 
 **[IMPORTANT]** The repo must be pulled after April 15, 2026 00:00 Eastern Time (06:00 in Wroclaw, Poland) to ensure having
 the most up to date code that is required for the workshop as there is no guarantee that there would be Internet at the event.
-There will be a USB thumb drive at the event just in case some attendees drop in without having pre-downloaded the GitHub repo,
+There will be USB thumb drives at the event just in case some attendees drop in without having pre-downloaded the GitHub repo,
 but it would still be better for others to set up the repo ahead of the event.
 
 Run:
@@ -68,7 +70,7 @@ and then run `kill -9 rails_server_process_number`.
 
 ## Exercises
 
-(solved fully in the `solution` branch)
+(solved in the `solution` branch)
 
 These exercises will build a Rails e-commerce web app with Frontend Ruby using Glimmer DSL for Web and Opal (Ruby-to-JavaScript Transpiler).
 
@@ -97,15 +99,12 @@ Exercise list (about 10 minutes per exercise):
 - Product list sorting by id, name, or price (implement with content-data-binding and Rails::ResourceService)
 - Product list pagination links [implement with content-data-binding and Rails::ResourceService, following provided HTML structure and CSS style]
 
-Bonus:
-- Product list filtering by product name, brand, gender, and/or age
-
-
 ## Homework After The Workshop
 
-(solved fully in the `solution` branch)
+(solved in the `solution` branch)
 
 After the workshop is done, you could implement these exercises on your own to improve your skills further in Glimmer DSL for Web:
+- Filter Products by product brand, gender, and/or age using the `multi_checkbox_dropdown` custom component from the `glimmer-web-components` gem
 - Add product to cart (quantity of 1 and size of M by default)
 - Add product to cart with specified quantity
 - Add product to cart with specified quantity and size
