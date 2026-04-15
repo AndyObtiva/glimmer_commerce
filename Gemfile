@@ -34,7 +34,7 @@ gem "bootsnap", require: false
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
-gem 'opal-rails', '2.0.4'
+gem 'opal-rails', '3.0.0'
 gem 'glimmer-dsl-web', '0.9.0'
 gem 'glimmer-web-components', '0.1.2'
 gem 'active_model_serializers', '~> 0.10.0'
