@@ -13,9 +13,9 @@ Usecase:
 
 Steps:
 
-1- Implement a Glimmer Web Component that matches the component being rendered by `app/views/products/show.html.erb` with a `div` element as the markup root and an `h1` underneath it that has the product name
-2- Make product names links that take the user to the Product Show page (`/products/product_id`)
-3- Make product images links that take the user to the Product Show page (`/products/product_id`)
+1. Implement a Glimmer Web Component that matches the component being rendered by `app/views/products/show.html.erb` with a `div` element as the markup root and an `h1` underneath it that has the product name
+2. Make product names links that take the user to the Product Show page (`/products/product_id`)
+3. Make product images links that take the user to the Product Show page (`/products/product_id`)
 
 Tips:
 
