@@ -74,7 +74,7 @@ and then run `kill -9 rails_server_process_number`.
 
 ## Exercises
 
-(solved in the `solution` branch)
+(solved fully in the `solution` branch)
 
 These exercises will build a Rails e-commerce web app with Frontend Ruby using Glimmer DSL for Web and Opal (Ruby-to-JavaScript Transpiler).
 
@@ -88,27 +88,55 @@ Every exercise includes:
 
 You can follow the steps of exercise solutions right away, especially when getting started with the workshop, but later on, you could optionally challenge yourself and attempt to solve some exercises on your own without looking at their solution right away.
 
-Exercise list (about 10 minutes per exercise):
-- Hello Data Binding
-- Product list (name only) [using products_attributes hash]
-- Product list (name, brand, gender, age, and price)
-- Product list (name, brand, gender, age, price, and image)
-- Product list (name, brand, gender, age, price, and image) [using Frontend Product Model]
-- Product list (name, brand, gender, age, price, and image) [following provided HTML structure and CSS style]
-- Product info (name only) [navigating via anchor link]
-- Product info (name, brand, gender, age, price, description, and image)
-- Product info (name, brand, gender, age, price, description, and image) [Frontend navigation via component page link]
-- Product info (name, brand, gender, age, price, description, and image) [add back to products component page link]
-- Product list filtering by product name (implement with content-data-binding and Rails::ResourceService)
-- Product list sorting by id, name, or price (implement with content-data-binding and Rails::ResourceService)
-- Product list pagination links [implement with content-data-binding and Rails::ResourceService, following provided HTML structure and CSS style]
+### Exercise 1 List Products (Names Only)
+
+[docs/exercises/exercise-01-list-products-names-only.md](/docs/exercises/exercise-01-list-products-names-only.md)
+
+### Exercise 2 List Products (Name, Brand, Gender, Age, and Price)
+
+[docs/exercises/exercise-02-list-products-name-brand-gender-age-price.md](/docs/exercises/exercise-02-list-products-name-brand-gender-age-price.md)
+
+### Exercise 3 List Products (Name, Brand, Gender, Age, Price, and Image)
+
+[docs/exercises/exercise-03-list-products-name-brand-gender-age-price-image.md](/docs/exercises/exercise-03-list-products-name-brand-gender-age-price-image.md)
+
+### Exercise 4 List Products (Refactor)
+
+[docs/exercises/exercise-04-list-products-refactor.md](/docs/exercises/exercise-04-list-products-refactor.md)
+
+### Exercise 5 List Products (Style)
+
+[docs/exercises/exercise-05-list-products-style.md](/docs/exercises/exercise-05-list-products-style.md)
+
+### Exercise 6 Show Product Info (Name Only)
+
+[docs/exercises/exercise-06-show-product-info-name-only.md](/docs/exercises/exercise-06-show-product-info-name-only.md)
+
+### Exercise 7 Show Product Info (Name, Brand, Gender, Age, Price, Image, and Description)
+
+[docs/exercises/exercise-07-show-product-info-name-brand-gender-age-price-image-description.md](/docs/exercises/exercise-07-show-product-info-name-brand-gender-age-price-image-description.md)
+
+### Exercise 8 Show Product Info (Instant Frontend Rendering)
+
+[docs/exercises/exercise-08-show-product-info-instant-frontend-rendering.md](/docs/exercises/exercise-08-show-product-info-instant-frontend-rendering.md)
+
+### Exercise 9 Filter Products By Name
+
+[docs/exercises/exercise-09-filter-products-by-name.md](/docs/exercises/exercise-09-filter-products-by-name.md)
+
+### Exercise 10 Sort Products
+
+[docs/exercises/exercise-10-sort-products.md](/docs/exercises/exercise-10-sort-products.md)
+
+### Exercise 11 Paginate Products
+
+[docs/exercises/exercise-11-paginate-products.md](/docs/exercises/exercise-11-paginate-products.md)
 
 ## Homework After The Workshop
 
-(solved in the `solution` branch)
+(solved fully in the `solution` branch)
 
 After the workshop is done, you could implement these exercises on your own to improve your skills further in Glimmer DSL for Web:
-- Filter Products by product brand, gender, and/or age using the `multi_checkbox_dropdown` custom component from the `glimmer-web-components` gem
 - Add product to cart (quantity of 1 and size of M by default)
 - Add product to cart with specified quantity
 - Add product to cart with specified quantity and size
