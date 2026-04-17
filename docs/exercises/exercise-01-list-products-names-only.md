@@ -11,9 +11,9 @@ Usecase:
 
 Steps:
 
-1- Clear the markup of `app/assets/opal/views/product_list.rb`
-2- Add a root `div` and an `h1` inside its block with the text "Product List"
-3- Below the `h1`, add a `ul` HTML list with `li` elements containing product names
+1. Clear the markup of `app/assets/opal/views/product_list.rb`
+2. Add a root `div` and an `h1` inside its block with the text "Product List"
+3. Below the `h1`, add a `ul` HTML list with `li` elements containing product names
 
 Tips:
 
