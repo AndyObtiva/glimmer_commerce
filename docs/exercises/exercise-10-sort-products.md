@@ -12,15 +12,15 @@ Usecase:
 
 Steps:
 
-1- In `ProductList`, add a `div` right above the `div` that contains the name filter, and inside the `div`, add 2 `select` elements, one for sort att
-2- Populate the `sort_attribute` `select` element with options for the values `'id', 'name', 'brand', 'gender', 'age', 'price'`, with the displayed text being a capitalized version, except for `id`, which becomes `Featured`
-3- Populate the `sort_direction` `select` element with options for the values `'asc', 'desc'`, with the displayed text being `Ascending` and `Descending`
-4- Do Bidirectional Data-Binding of the first `select` element to `:sort_attribute` on `presenter`
-5- Do Bidirectional Data-Binding of the second `select` element to `:sort_direction` on `presenter`
-6- Update the `ProductListPresenter` to store `sort_attribute` and `sort_direction` from the `products_attributes` hash into `sort_attribute` and `sort_direction` as Ruby attributes (`attr_accessor`)
-7- Rename `observe_filter` method to `observe_filter_and_sort`
-8- Rename `@filter_observer` instance variable to `@filter_and_sort_observer` and have it observe `sort_attribute` and `sort_direction` in addition to `filter_product_name`
-9- Update `fetch_products_params` to set `sort_attribute` and `sort_direction` as params
+1. In `ProductList`, add a `div` right above the `div` that contains the name filter, and inside the `div`, add 2 `select` elements, one for sort att
+2. Populate the `sort_attribute` `select` element with options for the values `'id', 'name', 'brand', 'gender', 'age', 'price'`, with the displayed text being a capitalized version, except for `id`, which becomes `Featured`
+3. Populate the `sort_direction` `select` element with options for the values `'asc', 'desc'`, with the displayed text being `Ascending` and `Descending`
+4. Do Bidirectional Data-Binding of the first `select` element to `:sort_attribute` on `presenter`
+5. Do Bidirectional Data-Binding of the second `select` element to `:sort_direction` on `presenter`
+6. Update the `ProductListPresenter` to store `sort_attribute` and `sort_direction` from the `products_attributes` hash into `sort_attribute` and `sort_direction` as Ruby attributes (`attr_accessor`)
+7. Rename `observe_filter` method to `observe_filter_and_sort`
+8. Rename `@filter_observer` instance variable to `@filter_and_sort_observer` and have it observe `sort_attribute` and `sort_direction` in addition to `filter_product_name`
+9. Update `fetch_products_params` to set `sort_attribute` and `sort_direction` as params
 
 Tips:
 
