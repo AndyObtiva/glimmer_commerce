@@ -43,29 +43,84 @@ rails db:migrate
 rails db:seed
 ```
 
+## Troubleshooting Tips
+
+Although there is a chance you will not run into any trouble, it would be useful to know these troubleshooting tips
+in case you run into some trouble during the exercises:
+- When running into Opal Ruby errors, there are 2 classes of errors:
+  - Compilation Errors: Errors that show a Rails error page with a stack trace, which happen during Opal compilation of Ruby code (e.g. missing `end` for a method or a block, bad random characters in the file, etc...). These errors can be seen in full detail in the Rails server log in the command line. So, make sure to check there if you get a Rails error page.
+  - Execution Errors: Errors that happen in the Browser upon executing JavaScript compiled from Ruby. The webpage does load up, but the Frontend behavior is broken in those cases (e.g. no elements are displapyed, some element is missing, or some button does not function, etc...). These errors can be seen in full detail in the Browser Console, but do not attempt to read the class name reponsible in the printed stack trace. Instead, press on the expand arrow to open the Ruby source map stack trace below, and then search from top to bottom for the first Opal Ruby file name that appears related to your work, and look at what line number the error is referring to. You can even click on the file name and see Ruby code in the Browser directly if you want.
+- During exercise work, if you ever get weird Opal errors that do not relate to the project code, stop the Rails server,
+run `rm -rf tmp/cache`, and then start the rails server again with `rails s`. Afterwards, refresh the website, and the errors should go away
+if they are indeed unrelated to the project code.
+- If the Rails server ever gets stuck (e.g. `SystemStackError: stack level too deep`), run `ps`, find the Rails server process number,
+and then run `kill -9 rails_server_process_number`.
+
 ## Exercises
 
-At the workshop (about 10 minutes per exercise):
-- Product list (name only) [using products_attributes hash]
-- Product list (name, brand, gender, age, and price)
-- Product list (name, brand, gender, age, price, and image)
-- Product list (name, brand, gender, age, price, and image) [using Frontend Product Model]
-- Product list (name, brand, gender, age, price, and image) [following provided HTML structure and CSS style]
-- Product list pagination links [navigation via anchor links]
-- Product list pagination links [following provided HTML structure and CSS style]
-- Product list pagination links [navigation via Frontend rendering with Content Data-Binding and REST API calls]
-- Product info (name only) [navigating via anchor link]
-- Product info (name, brand, gender, age, and price)
-- Product info (name, brand, gender, age, price, and image)
-- Product info (name, brand, gender, age, price, image, and description)
-- Product info (name, brand, gender, age, price, image, and description) [add back to products button]
-- Product info (name, brand, gender, age, price, image, and description) [navigation via Frontend rendering, including link back to products]
-- Product list sorting by product name
-- Product list sorting by product name or price
-- Product list filtering by product name
-- Product list filtering by product name, brand, gender, and/or age
+(solved fully in the `solution` branch)
 
-As extra learning homework after the workshop:
+These exercises will build a Rails e-commerce web app with Frontend Ruby using Glimmer DSL for Web and Opal (Ruby-to-JavaScript Transpiler).
+
+Every exercise includes:
+- Feature: the feature being developed.
+- Topics: what topics in Glimmer DSL for Web you are learning through the exercise.
+- Usecase: what is required by the solution from the user point of view.
+- Tips: helpful tips to help figure out the solution.
+- Steps: what steps to follow to do the exercise.
+- Solution: the code of all the files that needed changes to solve the exercise.
+
+You can follow the steps of exercise solutions right away, especially when getting started with the workshop, but later on, you could optionally challenge yourself and attempt to solve some exercises on your own without looking at their solution right away.
+
+### Exercise 1 List Products (Names Only)
+
+[docs/exercises/exercise-01-list-products-names-only.md](/docs/exercises/exercise-01-list-products-names-only.md)
+
+### Exercise 2 List Products (Name, Brand, Gender, Age, and Price)
+
+[docs/exercises/exercise-02-list-products-name-brand-gender-age-price.md](/docs/exercises/exercise-02-list-products-name-brand-gender-age-price.md)
+
+### Exercise 3 List Products (Name, Brand, Gender, Age, Price, and Image)
+
+[docs/exercises/exercise-03-list-products-name-brand-gender-age-price-image.md](/docs/exercises/exercise-03-list-products-name-brand-gender-age-price-image.md)
+
+### Exercise 4 List Products (Refactor)
+
+[docs/exercises/exercise-04-list-products-refactor.md](/docs/exercises/exercise-04-list-products-refactor.md)
+
+### Exercise 5 List Products (Style)
+
+[docs/exercises/exercise-05-list-products-style.md](/docs/exercises/exercise-05-list-products-style.md)
+
+### Exercise 6 Show Product Info (Name Only)
+
+[docs/exercises/exercise-06-show-product-info-name-only.md](/docs/exercises/exercise-06-show-product-info-name-only.md)
+
+### Exercise 7 Show Product Info (Name, Brand, Gender, Age, Price, Image, and Description)
+
+[docs/exercises/exercise-07-show-product-info-name-brand-gender-age-price-image-description.md](/docs/exercises/exercise-07-show-product-info-name-brand-gender-age-price-image-description.md)
+
+### Exercise 8 Show Product Info (Instant Frontend Rendering)
+
+[docs/exercises/exercise-08-show-product-info-instant-frontend-rendering.md](/docs/exercises/exercise-08-show-product-info-instant-frontend-rendering.md)
+
+### Exercise 9 Filter Products By Name
+
+[docs/exercises/exercise-09-filter-products-by-name.md](/docs/exercises/exercise-09-filter-products-by-name.md)
+
+### Exercise 10 Sort Products
+
+[docs/exercises/exercise-10-sort-products.md](/docs/exercises/exercise-10-sort-products.md)
+
+### Exercise 11 Paginate Products
+
+[docs/exercises/exercise-11-paginate-products.md](/docs/exercises/exercise-11-paginate-products.md)
+
+## Homework After The Workshop
+
+(solved fully in the `solution` branch)
+
+After the workshop is done, you could implement these exercises on your own to improve your skills further in Glimmer DSL for Web:
 - Add product to cart (quantity of 1 and size of M by default)
 - Add product to cart with specified quantity
 - Add product to cart with specified quantity and size
