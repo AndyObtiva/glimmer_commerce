@@ -13,14 +13,14 @@ Usecase:
 
 Steps:
 
-1- Add a text `input` field (wrapped by its own `div`) above the products `ul` element and below the `h1` element, setting its `placeholder` attribute to `product name filter`
-2- Do Bidirectional Data-Binding of the `input` field `value` to the `filter_product_name` attribute on the `@presenter` instance variable (the attribute will be added to the presenter class later below)
-3- Add a `label` (wrapped by its own `div`) just below the `div` containing the text `input` field
-4- Do Unidirectional Data-Binding of the `label` `inner_text` property to the `displaying_products_text` attribute on the `@presenter` instance variable while specifying that it is computed by `filter_product_name` (the attribute will be added to the presenter class later below)
-5- Use Content Data-Binding inside the products `ul` element to bind its content to the attribute `products` on `ProductListPresenter` (`@presenter` instance variable). That will ensure that filtering the presenters `Array` will reflect changes in the View (Glimmer Web Component) automatically.
-6- Add the `filter_product_name` as a Ruby attribute accessor on the `ProductListPresenter`
-7- Implement the `displaying_products_text` method on the `ProductListPresenter`, computing its value from `filter_product_name`. When `filter_product_name` is not `nil`, the text returned says `Displaying products filtered by name containing "filtervalue"`; otherwise, it says `Displaying all products`.
-8- Use a `Glimmer::DataBinding::Observer.proc {}` in `ProductListPresenter` (triggered when instantiating it) to observe changes in `filter_product_name` and use its value to fetch filtered products with a REST API call via `Rails::ResourceService` that passes `filter_product_name` as an HTTP request parameter when it is not empty.
+1. Add a text `input` field (wrapped by its own `div`) above the products `ul` element and below the `h1` element, setting its `placeholder` attribute to `product name filter`
+2. Do Bidirectional Data-Binding of the `input` field `value` to the `filter_product_name` attribute on the `@presenter` instance variable (the attribute will be added to the presenter class later below)
+3. Add a `label` (wrapped by its own `div`) just below the `div` containing the text `input` field
+4. Do Unidirectional Data-Binding of the `label` `inner_text` property to the `displaying_products_text` attribute on the `@presenter` instance variable while specifying that it is computed by `filter_product_name` (the attribute will be added to the presenter class later below)
+5. Use Content Data-Binding inside the products `ul` element to bind its content to the attribute `products` on `ProductListPresenter` (`@presenter` instance variable). That will ensure that filtering the presenters `Array` will reflect changes in the View (Glimmer Web Component) automatically.
+6. Add the `filter_product_name` as a Ruby attribute accessor on the `ProductListPresenter`
+7. Implement the `displaying_products_text` method on the `ProductListPresenter`, computing its value from `filter_product_name`. When `filter_product_name` is not `nil`, the text returned says `Displaying products filtered by name containing "filtervalue"`; otherwise, it says `Displaying all products`.
+8. Use a `Glimmer::DataBinding::Observer.proc {}` in `ProductListPresenter` (triggered when instantiating it) to observe changes in `filter_product_name` and use its value to fetch filtered products with a REST API call via `Rails::ResourceService` that passes `filter_product_name` as an HTTP request parameter when it is not empty.
 
 Tips:
 
