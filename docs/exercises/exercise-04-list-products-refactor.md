@@ -11,9 +11,9 @@ Usecase (no change, only refactoring as per steps):
 
 Steps:
 
-1- Refactor/Extract a `Product` Model under `app/assets/opal/models/product.rb` with an initializer that takes keyword arguments for all product attributes coming in `products_attributes`. Make sure the app works without a change after this refactoring.
-2- Refactor/Extract a `ProductListPresenter` Presenter under `app/assets/opal/presenters/product_list_presenter.rb` that accepts `products_attributes` via initializer and provides a `products` attribute that returns `Product` instances (converted from `products_attributes`). Make sure the app works without a change after this refactoring.
-3- Refactor/Extract a `ProductListItem` Glimmer Web Component under `app/assets/opal/views/product_list_item.rb` that takes a `product` attribute as input and handles rendering the `li` element with all its contents (image + product `String`) for a product. Make sure the app works without a change after this refactoring.
+1. Refactor/Extract a `Product` Model under `app/assets/opal/models/product.rb` with an initializer that takes keyword arguments for all product attributes coming in `products_attributes`. Make sure the app works without a change after this refactoring.
+2. Refactor/Extract a `ProductListPresenter` Presenter under `app/assets/opal/presenters/product_list_presenter.rb` that accepts `products_attributes` via initializer and provides a `products` attribute that returns `Product` instances (converted from `products_attributes`). Make sure the app works without a change after this refactoring.
+3. Refactor/Extract a `ProductListItem` Glimmer Web Component under `app/assets/opal/views/product_list_item.rb` that takes a `product` attribute as input and handles rendering the `li` element with all its contents (image + product `String`) for a product. Make sure the app works without a change after this refactoring.
 
 Tips:
 
