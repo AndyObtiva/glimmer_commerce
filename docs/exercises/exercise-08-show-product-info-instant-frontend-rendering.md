@@ -14,8 +14,8 @@ Usecase:
 
 Steps:
 
-1- Enhance the anchor tags in the product list homepage by replacing `a` elements with `page_component_link` (built-in Glimmer Web Component), to enable instant rendering of the product page when navigating to a product given that the product list page has all the product data attributes anyways
-2- Add a "Back to products" link at the bottom of the product page (inside its own `div`) using `page_component_link` as well.
+1. Enhance the anchor tags in the product list homepage by replacing `a` elements with `page_component_link` (built-in Glimmer Web Component), to enable instant rendering of the product page when navigating to a product given that the product list page has all the product data attributes anyways
+2. Add a "Back to products" link at the bottom of the product page (inside its own `div`) using `page_component_link` as well.
 
 Tips:
 
