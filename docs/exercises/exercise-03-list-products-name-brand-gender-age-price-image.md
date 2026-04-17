@@ -11,11 +11,11 @@ Usecase:
 
 Steps:
 
-1- Inside each product's `li` element, surround the product `String` by a `div` to prepare for adding an image above it inside the same `li`
-2- Include an `img` element in each product's `li` element above the product `String` `div`
-3- Set the `img` element `width` attribute to `200`
-4- Hide list bullet points
-5- Remove the indentation of the list
+1. Inside each product's `li` element, surround the product `String` by a `div` to prepare for adding an image above it inside the same `li`
+2. Include an `img` element in each product's `li` element above the product `String` `div`
+3. Set the `img` element `width` attribute to `200`
+4. Hide list bullet points
+5. Remove the indentation of the list
 
 Tips:
 
