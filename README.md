@@ -64,7 +64,7 @@ and then run `kill -9 rails_server_process_number`.
 
 ## Exercises
 
-(solved in the `solution` branch)
+(solved in the `solution` branch and in `exercise-*` branches)
 
 These exercises will build a Rails e-commerce web app with Frontend Ruby using Glimmer DSL for Web and Opal (Ruby-to-JavaScript Transpiler).
 
