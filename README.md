@@ -7,11 +7,6 @@ exercises at the Wroclove.rb 2026 Ruby Conference using [Opal Ruby](https://opal
 a Ruby-in-the-Browser Frontend Framework for Rails that [won a Fukuoka Prefecture Future IT Initiative 2025 award](https://andymaleh.blogspot.com/2025/01/glimmer-dsl-for-web-wins-in-fukuoka.html)
 by Matz, the creator of Ruby, and other Fukuoka competition judges.
 
-**[IMPORTANT]** Please make sure to set up this project on your machine ahead of the conference workshop, as per the setup instructions below, as there is
-no guarantee that there would be Internet at the event. That has to be done after April 15, 2026 00:00 Eastern Time (06:00 in Wroclaw, Poland) to pull the
-most up-to-date version of this project's code before the workshop takes place on April 17, 2026 at 14:00. There will be a USB thumb drive at the event just in case some attendees drop in without having pre-downloaded the GitHub repo,
-but it would still be better for others to set up the repo ahead of the event.
-
 ![screenshots/glimmer-commerce.png](/screenshots/glimmer-commerce.png)
 
 Given that the Wroclove.rb event will be a workshop, we will quickly hit the ground running at the event through a series of hands-on
@@ -28,11 +23,6 @@ exercises without going through a long presentation, so it would be recommended 
 
 ## Setup Instructions
 
-**[IMPORTANT]** The repo must be pulled after April 15, 2026 00:00 Eastern Time (06:00 in Wroclaw, Poland) to ensure having
-the most up to date code that is required for the workshop as there is no guarantee that there would be Internet at the event.
-There will be USB thumb drives at the event just in case some attendees drop in without having pre-downloaded the GitHub repo,
-but it would still be better for others to set up the repo ahead of the event.
-
 Run:
 ```
 git clone https://github.com/AndyObtiva/glimmer_commerce.git
@@ -46,7 +36,7 @@ rails s
 Visit http://localhost:3000/ , click the test button, and make sure you see a message confirming test success,
 to ensure Opal Ruby is working in the Frontend of the Rails web application.
 
-**[IMPORTANT]** If you have set up the project already in advance and later discover a new version has been uploaded to the repo,
+If you have set up the project already in advance and later discover a new version has been uploaded to the repo,
 please follow these instructions to update your repo and project:
 
 ```
@@ -74,7 +64,7 @@ and then run `kill -9 rails_server_process_number`.
 
 ## Exercises
 
-(solved fully in the `solution` branch)
+(solved in the `solution` branch)
 
 These exercises will build a Rails e-commerce web app with Frontend Ruby using Glimmer DSL for Web and Opal (Ruby-to-JavaScript Transpiler).
 
@@ -134,9 +124,10 @@ You can follow the steps of exercise solutions right away, especially when getti
 
 ## Homework After The Workshop
 
-(solved fully in the `solution` branch)
+(solved in the `proof-of-concept` branch)
 
 After the workshop is done, you could implement these exercises on your own to improve your skills further in Glimmer DSL for Web:
+- Filter products by brand, age, and/or gender.
 - Add product to cart (quantity of 1 and size of M by default)
 - Add product to cart with specified quantity
 - Add product to cart with specified quantity and size
