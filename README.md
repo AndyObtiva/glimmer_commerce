@@ -36,6 +36,8 @@ rails s
 Visit http://localhost:3000/ , click the test button, and make sure you see a message confirming test success,
 to ensure Opal Ruby is working in the Frontend of the Rails web application.
 
+(Note that the first time you load the home page, it takes a little while to load because of initial Opal Ruby to JavaScript compilation, but subsequent visits load much faster due to only compiling diffs going forward)
+
 If you have set up the project already in advance and later discover a new version has been uploaded to the repo,
 please follow these instructions to update your repo and project:
 
