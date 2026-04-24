@@ -126,7 +126,7 @@ You can follow the steps of exercise solutions right away, especially when getti
 
 ## Homework After The Workshop
 
-(solved in the `proof-of-concept` branch)
+(solved partially in the `proof-of-concept` branch)
 
 After the workshop is done, you could implement these exercises on your own to improve your skills further in Glimmer DSL for Web:
 - Filter products by brand, age, and/or gender.
